@@ -1,0 +1,628 @@
+{
+  "_comment": "Add, remove, or edit projects here. Each project auto-renders in the Projects and Games panels.",
+  "projects": [
+    {
+      "id": "chrono-isles",
+      "title": "Chrono Isles",
+      "engine": "unreal",
+      "engineLabel": "Unreal Engine 5",
+      "language": "C++ & Blueprints",
+      "genre": "Puzzle Adventure",
+      "role": "Gameplay Programmer",
+      "platform": [
+        "PC",
+        "Windows"
+      ],
+      "year": "2024",
+      "status": "Prototype",
+      "thumbnail": "",
+      "video": "https://youtu.be/ELmbrn2mAPY?si=RlDVT_0a4v1mhz1W",
+      "screenshots": [],
+      "github": "",
+      "download": "",
+      "livedemo": "",
+      "duration": "3 Months",
+      "team": "Solo Developer",
+      "completion": 100,
+      "stats": {
+        "linesOfCode": "12,842",
+        "blueprintNodes": "1,350+",
+        "assets": "210+",
+        "performance": "60 FPS"
+      },
+      "controls": [
+        {
+          "keys": [
+            "W",
+            "A",
+            "S",
+            "D"
+          ],
+          "label": "Move"
+        },
+        {
+          "keys": [
+            "SPACE"
+          ],
+          "label": "Jump"
+        },
+        {
+          "keys": [
+            "E"
+          ],
+          "label": "Interact"
+        }
+      ],
+      "achievements": [
+        "Custom C++ Controller",
+        "Dynamic Gravity System",
+        "Modular Puzzle Logic"
+      ],
+      "devLog": {
+        "challenge": "Handling object state changes between multiple timelines.",
+        "solution": "Created an event-driven state management system for synchronized timeline updates."
+      },
+      "description": "Chrono Isles is a third-person puzzle adventure prototype developed in Unreal Engine 5 using a hybrid workflow of C++ and Blueprint Visual Scripting. The project features a custom third-person character controller written in C++, while gameplay systems, puzzle logic, and interactive environments were built using Blueprints. Players explore a chain of floating islands where each level introduces mechanics such as Time Manipulation, Teleportation, Dynamic Gravity, and Electricity, culminating in puzzles that combine multiple abilities. This project showcases my skills in gameplay programming, system design, level design, and creating modular gameplay mechanics.",
+      "mechanics": [
+        "Custom C++ third-person controller",
+        "Time manipulation puzzles",
+        "Teleportation + dynamic gravity",
+        "Battery-powered electricity system",
+        "Physics-based interaction",
+        "Seven-island progression"
+      ],
+      "technologies": [
+        "Unreal Engine 5",
+        "C++",
+        "Blueprint Visual Scripting",
+        "Third-Person Character Controller",
+        "Gameplay Programming",
+        "Physics-Based Interactions",
+        "Time Manipulation System",
+        "Teleportation System",
+        "Dynamic Gravity",
+        "Puzzle System Design",
+        "Environment Interaction",
+        "Animation Blueprints",
+        "Niagara VFX",
+        "Lighting",
+        "Level Design"
+      ]
+    },
+    {
+      "id": "haunted-village",
+      "title": "Haunted Village",
+      "engine": "unreal",
+      "engineLabel": "Unreal Engine 5",
+      "language": "Blueprints",
+      "genre": "Horror",
+      "role": "Gameplay Programmer",
+      "platform": [
+        "PC",
+        "Windows"
+      ],
+      "year": "2024",
+      "status": "Prototype",
+      "thumbnail": "",
+      "video": "",
+      "screenshots": [],
+      "itch": "https://itch.io/",
+      "github": "",
+      "download": "",
+      "livedemo": "",
+      "description": "Haunted Village Prototype is a first-person horror prototype developed to demonstrate AI behavior, stealth mechanics, and atmospheric horror gameplay. Players explore an abandoned village where opening a mysterious box transforms the environment from day to night, unleashing supernatural entities. The objective is to locate and destroy five cursed tape recorders while avoiding ghosts and environmental traps. The prototype focuses on creating suspense through enemy AI and immersive horror elements.",
+      "mechanics": [
+        "Dynamic day-to-night transition",
+        "Vision-based Ghost AI",
+        "Sound-reactive Hand Ghost AI",
+        "Stealth gameplay",
+        "Five-recorder objective system",
+        "Hidden trap zones + jump-scares"
+      ],
+      "features": [
+        "Reactive AI perception system",
+        "Dynamic lighting transitions",
+        "Stealth detection feedback",
+        "Environmental storytelling",
+        "Jump-scare sequencing"
+      ],
+      "technologies": [
+        "Blueprints",
+        "Unreal Engine 5",
+        "AI Behavior Trees",
+        "Perception System"
+      ]
+    },
+    {
+      "id": "dual-worlds",
+      "title": "Dual Worlds",
+      "engine": "unreal",
+      "engineLabel": "Unreal Engine 5",
+      "language": "Blueprints",
+      "genre": "Puzzle Adventure",
+      "role": "Gameplay Programmer",
+      "platform": [
+        "PC",
+        "Windows"
+      ],
+      "year": "2024",
+      "status": "Prototype",
+      "thumbnail": "",
+      "video": "",
+      "screenshots": [],
+      "itch": "https://itch.io/",
+      "github": "",
+      "download": "",
+      "livedemo": "",
+      "description": "Dual Worlds is a first-person puzzle adventure developed in Unreal Engine. Players explore two interconnected worlds—a Day World and a Night World—linked by a mysterious portal. Every action performed in one world directly affects the other, creating unique environmental puzzles that require observation, logic, and exploration. The objective is to collect three ancient stones, each unlocked through a different puzzle. Players manipulate the environment across worlds, possess and control mirrors to redirect beams of light, and use a weight machine to identify object weights before balancing an ancient mechanism. By switching between the Day and Night Worlds, players solve interconnected puzzles and uncover the path to the final objective.",
+      "mechanics": [
+        "Portal-based world switching",
+        "Mirror possession system",
+        "Light reflection puzzles",
+        "Weight machine puzzle",
+        "Cross-world cause & effect",
+        "Three ancient stones objective"
+      ],
+      "features": [
+        "Seamless world transition system",
+        "Cross-dimensional puzzle logic",
+        "Mirror interaction framework",
+        "Progressive puzzle escalation",
+        "Narrative environmental design"
+      ],
+      "technologies": [
+        "Blueprints",
+        "Unreal Engine 5",
+        "Scene Capture",
+        "Material Instances"
+      ]
+    },
+    {
+      "id": "10-second-escape",
+      "title": "10-Second Escape",
+      "engine": "unreal",
+      "engineLabel": "Unreal Engine 5",
+      "language": "Blueprints",
+      "genre": "Puzzle",
+      "role": "Gameplay Programmer",
+      "platform": [
+        "PC",
+        "Windows"
+      ],
+      "year": "2023",
+      "status": "Prototype",
+      "thumbnail": "",
+      "video": "",
+      "screenshots": [],
+      "itch": "https://itch.io/",
+      "github": "",
+      "download": "",
+      "livedemo": "",
+      "description": "0-Second Escape is a fast-paced level-based puzzle prototype developed in Unreal Engine. The player is trapped inside a closed room and must escape within a strict 10-second time limit. Each level features a unique room layout where the player must quickly find a hidden key and reach the locked door before time runs out. The short time constraint creates high tension gameplay focused on speed, observation, and quick decision-making.As levels progress, room layouts become more complex, with smarter key placements and tighter navigation spaces, increasing the challenge while keeping the core mechanic simple and replayable.",
+      "mechanics": [
+        "10-second countdown timer",
+        "Room-based level design",
+        "Hidden key collection",
+        "Time-based instant restart",
+        "Progressive difficulty"
+      ],
+      "features": [
+        "Tension-building timer system",
+        "Instant restart loop design",
+        "Hidden object detection",
+        "Minimalist level architecture"
+      ],
+      "technologies": [
+        "Blueprints",
+        "Unreal Engine 5",
+        "UMG UI"
+      ]
+    },
+    {
+      "id": "village-platformer",
+      "title": "Village Platformer",
+      "engine": "unreal",
+      "engineLabel": "Unreal Engine 5",
+      "language": "Blueprints",
+      "genre": "Platformer",
+      "role": "Gameplay Programmer",
+      "platform": [
+        "PC",
+        "Windows"
+      ],
+      "year": "2023",
+      "status": "Prototype",
+      "thumbnail": "",
+      "video": "",
+      "screenshots": [],
+      "itch": "https://itch.io/",
+      "github": "",
+      "download": "",
+      "livedemo": "",
+      "description": "A 3D side-view platformer set in a peaceful village environment where players navigate through platforms, obstacles, and walls using precise movement and jumping mechanics. The game features a unique camera transition system that smoothly rotates to a new side-view perspective whenever the player reaches the edge of a wall, creating seamless navigation between different paths while maintaining intuitive platforming gameplay.",
+      "mechanics": [
+        "Responsive side-view movement",
+        "Smooth camera rotation at edges",
+        "Multiple perspectives, one control scheme",
+        "Exploration-based level design"
+      ],
+      "features": [
+        "Dynamic camera rotation system",
+        "Perspective-switching traversal",
+        "Fluid character movement",
+        "Environment-driven camera triggers"
+      ],
+      "technologies": [
+        "Blueprints",
+        "Unreal Engine 5",
+        "Spring Arm Camera",
+        "Character Movement"
+      ]
+    },
+    {
+      "id": "tank-battle",
+      "title": "Tank Battle Prototype",
+      "engine": "unreal",
+      "engineLabel": "Unreal Engine 5",
+      "language": "Blueprints",
+      "genre": "Vehicle Combat",
+      "role": "Gameplay Programmer",
+      "platform": [
+        "PC",
+        "Windows"
+      ],
+      "year": "2023",
+      "status": "Prototype",
+      "thumbnail": "",
+      "video": "",
+      "screenshots": [],
+      "itch": "https://itch.io/",
+      "github": "",
+      "download": "",
+      "livedemo": "",
+      "description": "A tank combat prototype developed to demonstrate core vehicle movement and combat mechanics. The player controls a tank, navigates the battlefield, and destroys enemy tanks using projectile-based weapons. Enemy tanks automatically fire when the player enters their attack range. The prototype focuses on implementing responsive controls, shooting mechanics, and range-based enemy attack behavior.",
+      "mechanics": [
+        "Third-person tank movement",
+        "Projectile combat",
+        "Range-based enemy attack AI",
+        "Collision & damage system"
+      ],
+      "features": [
+        "Projectile trajectory system",
+        "Enemy range detection",
+        "Damage & health management",
+        "Particle destruction effects"
+      ],
+      "technologies": [
+        "Blueprints",
+        "Unreal Engine 5"
+      ]
+    },
+    {
+      "id": "one-more-death",
+      "title": "One More Death",
+      "engine": "unity",
+      "engineLabel": "Unity",
+      "language": "C#",
+      "genre": "2D Puzzle Platformer",
+      "role": "Gameplay Programmer",
+      "platform": [
+        "PC",
+        "Windows",
+        "WebGL",
+        "Android"
+      ],
+      "year": "2024",
+      "status": "Prototype",
+      "thumbnail": "",
+      "video": "https://youtu.be/MigaB-ftm9U?si=eCGYbL6NVgFhzzfO",
+      "screenshots": [],
+      "itch": "https://itch.io/",
+      "github": "",
+      "download": "",
+      "livedemo": "",
+      "description": "One More Death is a 2D puzzle-platformer developed in Unity that challenges players to solve platforming puzzles using a unique sacrifice mechanic. Instead of avoiding death, players must strategically use it to overcome obstacles. By sacrificing the character, a platform is created at the death location, allowing the player to build new paths and reach the portal. Featuring a minimalist black-and-white art style with red hazards, the game focuses on creative puzzle-solving, precision platforming, and strategic thinking.",
+      "mechanics": [
+        "Death Platform mechanic",
+        "Respawn-to-start system",
+        "Strategic multi-death puzzles",
+        "Instant reset on hazard",
+        "Minimalist black & white visuals"
+      ],
+      "features": [
+        "Unique death-as-tool mechanic",
+        "Persistent corpse platforms",
+        "Strategic puzzle design",
+        "Clean minimalist art direction",
+        "Tight platformer controls"
+      ],
+      "technologies": [
+        "C#",
+        "Unity",
+        "Tilemap",
+        "2D Physics",
+        "New Input System"
+      ]
+    },
+    {
+      "id": "color-triangle",
+      "title": "Color Triangle",
+      "engine": "unity",
+      "engineLabel": "Unity",
+      "language": "C#",
+      "genre": "Arcade",
+      "role": "Gameplay Programmer",
+      "platform": [
+        "Android",
+        "Windows",
+        "WebGL"
+      ],
+      "year": "2023",
+      "status": "Released",
+      "thumbnail": "",
+      "video": "https://youtu.be/tShKYsJg3r4?si=41yzc6xjdbTii_a5",
+      "screenshots": [],
+      "itch": "https://itch.io/",
+      "github": "",
+      "download": "",
+      "livedemo": "",
+      "description": "Color Triangle is a fast-paced arcade game developed in Unity where players rotate a three-sided colored triangle to match incoming colored balls. The game combines simple controls with increasingly challenging gameplay, encouraging quick reflexes and precise timing. Designed for Android and Web platforms, the project showcases gameplay programming, responsive controls, UI implementation, and game systems.",
+      "mechanics": [
+        "Player-controlled triangle rotation",
+        "Color-matching gameplay",
+        "Endless ball spawner",
+        "Responsive mobile and keyboard controls",
+        "mooth rotation using Unity Input System",
+        "Dynamic UI updates",
+        "Cross-platform: Android, Windows, WebGL"
+      ],
+      "features": [
+        "Addictive score loop",
+        "Escalating difficulty curve",
+        "Cross-platform input handling",
+        "High score persistence",
+        "Polished mobile UI"
+      ],
+      "technologies": [
+        "C#",
+        "Unity",
+        "PlayerPrefs",
+        "figma",
+        "photoshop"
+      ]
+    },
+    {
+      "id": "land-shark",
+      "title": "Land Shark",
+      "engine": "unity",
+      "engineLabel": "Unity",
+      "language": "C#",
+      "genre": "Action",
+      "role": "Gameplay Programmer",
+      "platform": [
+        "PC",
+        "Windows"
+      ],
+      "year": "2023",
+      "status": "Prototype",
+      "thumbnail": "",
+      "video": "",
+      "screenshots": [],
+      "itch": "https://itch.io/",
+      "github": "",
+      "download": "",
+      "livedemo": "",
+      "description": "Land Shark is a third-person action prototype developed in Unity. Players control a shark that swims through the ocean and hunts human swimmers using fast-paced, physics-based attack mechanics. The prototype focuses on creating responsive movement, intelligent target selection, and dynamic shark attack behavior.",
+      "mechanics": [
+        "Physics-based underwater navigation",
+        "Sine-wave breach jump",
+        "Nearest target detection & lock",
+        "Dynamic jump attack",
+        "Random AI movement"
+      ],
+      "features": [
+        "Predictive target locking",
+        "Ballistic breach trajectory",
+        "Dynamic water interaction"
+      ],
+      "technologies": [
+        "C#",
+        "Unity",
+        "Rigidbody Physics",
+        "NavMesh",
+        "Coroutines"
+      ]
+    },
+    {
+      "id": "car-color-path",
+      "title": "Car Color Path",
+      "engine": "unity",
+      "engineLabel": "Unity",
+      "language": "C#",
+      "genre": "Casual Arcade",
+      "role": "Gameplay Programmer",
+      "platform": [
+        "Android",
+        "Windows"
+      ],
+      "year": "2023",
+      "status": "Prototype",
+      "thumbnail": "",
+      "video": "",
+      "screenshots": [],
+      "itch": "https://itch.io/",
+      "github": "",
+      "download": "",
+      "livedemo": "",
+      "devLog": {
+        "challenge": "Creating a smooth one-touch control system where the car moves while the screen is held, stops instantly when released, and paints the road accurately without affecting gameplay.",
+        "solution": "Implemented a touch-and-hold movement system with real-time path painting, obstacle detection, car selection, and smoke particle effects to provide responsive controls and visual feedback.",
+        "impact": "Delivered smooth and intuitive gameplay with satisfying visual effects, improved player control, and a polished casual game experience suitable for mobile devices."
+      },
+      "description": "Car Color Path is a casual arcade prototype inspired by path-painting mechanics. The player controls a car that drives along a predefined track and paints the road while moving. The main objective is to complete the entire level by coloring the full path while avoiding moving obstacles. The game focuses on simple one-touch control, smooth movement, and satisfying visual feedback.",
+      "mechanics": [
+        "Touch-and-hold movement",
+        "Dynamic road painting",
+        "Obstacle avoidance",
+        "Coin collection",
+        "Smooth follow camera"
+      ],
+      "features": [
+        "Touch-responsive controls",
+        "Procedural paint rendering",
+        "Spline-based track system",
+        "Collision obstacle spawning",
+        "Completion percentage tracking"
+      ],
+      "technologies": [
+        "C#",
+        "Unity",
+        "Trail Renderer",
+        "Mobile Input",
+        "Android SDK"
+      ]
+    },
+    {
+      "id": "zombie-land",
+      "title": "Zombie Land",
+      "engine": "unity",
+      "engineLabel": "Unity",
+      "language": "C#",
+      "genre": "Survival Shooter",
+      "role": "Gameplay Programmer",
+      "platform": [
+        "PC",
+        "Windows"
+      ],
+      "year": "2023",
+      "status": "Prototype",
+      "thumbnail": "",
+      "video": "https://youtu.be/rBOE8Ds_KoA?si=4vnIJ_28LMCB-P6B",
+      "screenshots": [],
+      "itch": "https://itch.io/",
+      "github": "",
+      "download": "",
+      "livedemo": "",
+      "devLog": {
+        "challenge": "Creating an endless zombie survival system with smooth performance on both mobile and PC.",
+        "solution": "Built a wave-based spawning system, headshot/body-shot damage, and cross-platform controls using Unity's New Input System.",
+        "impact": "Delivered smooth FPS gameplay, scalable endless waves, and responsive controls across mobile and PC."
+      },
+      "description": "Zombie Land is a first-person survival shooter prototype where the player drops into a zombie-infested battlefield using a parachute and must survive against endless waves of enemies. Zombies spawn randomly around the map and continuously hunt the player, creating intense and fast-paced survival gameplay. The player is equipped with firearms and grenades to eliminate incoming zombies. The main objective is to survive as long as possible in an infinite wave system where difficulty gradually increases over time.",
+      "mechanics": [
+        "Gun shooting with touch/click input",
+        "Hit detection for body and headshots",
+        "Headshots deal higher damage than body shots",
+        "Grenade throwing for area damage"
+      ],
+      "features": [
+        "Wave-based spawning system",
+        "Escalating difficulty tuning",
+        "Grenade physics & area damage",
+        "Headshot detection"
+      ],
+      "technologies": [
+        "C#",
+        "Unity",
+        "NavMesh",
+        "First-Person Controller",
+        "Particle System"
+      ]
+    },
+    {
+      "id": "gyro-ball",
+      "title": "Gyro Ball Prototype",
+      "engine": "unity",
+      "engineLabel": "Unity",
+      "language": "C# / Android",
+      "genre": "Mobile Physics",
+      "role": "Gameplay Programmer",
+      "platform": [
+        "Android"
+      ],
+      "year": "2023",
+      "status": "Prototype",
+      "thumbnail": "",
+      "video": "https://youtu.be/rxlyo4iw41c?si=pc13Q0zIU2uHPR3a",
+      "screenshots": [],
+      "github": "",
+      "devLog": {
+        "challenge": "Creating smooth and responsive gyroscope controls while maintaining realistic physics-based ball movement across different maze environments.",
+        "solution": "Implemented Unity's gyroscope input with physics-driven Rigidbody movement, combined with optimized camera follow, collision handling, and mobile-friendly UI for an intuitive gameplay experience.",
+        "impact": "Delivered a natural and immersive motion-control experience with stable performance, responsive gameplay, and a scalable level system suitable for expanding into a complete mobile game."
+      },
+      "description": "Gyro Ball Prototype is a real-time motion-controlled experience designed for mobile devices. The player guides a ball through a 3D environment using only device tilt input. The objective is to maintain balance, control speed, and navigate through different surfaces and obstacles. The prototype focuses on testing intuitive gyro-based movement combined with Unity physics for realistic rolling behavior.",
+      "mechanics": [
+        "Gyroscope-based movement",
+        "Physics-driven rolling momentum",
+        "Device rotation is mapped to world-space force or torque applied to the ball",
+        "Uses Unity New Input System for gyro data handling.",
+        "Surface angle affects speed and direction."
+      ],
+      "features": [
+        "Native gyroscope input reading",
+        "Mobile performance optimization"
+      ],
+      "technologies": [
+        "C#",
+        "Unity",
+        "Android Gyroscope API",
+        "Rigidbody Physics"
+      ]
+    },
+    {
+      "id": "candy-wire-gyro",
+      "title": "Candy Wire Gyro",
+      "engine": "unity",
+      "engineLabel": "Unity",
+      "language": "C#",
+      "genre": "Hyper Casual",
+      "role": "Gameplay Programmer",
+      "platform": [
+        "Android",
+        "Mobile"
+      ],
+      "year": "2024",
+      "status": "Prototype",
+      "thumbnail": "",
+      "video": "https://youtu.be/E1fR9oeYuDo?si=Bfsv5jdU4csR_KAY",
+      "screenshots": [],
+      "itch": "",
+      "github": "",
+      "download": "",
+      "livedemo": "",
+      "devLog": {
+        "challenge": "Creating smooth and responsive gyroscope controls while supporting traditional button controls, and designing a polished candy-themed UI that works well across different mobile screen sizes.",
+        "solution": "Implemented dual control modes (Gyroscope and Button), optimized collision detection, built a reusable UI management system with DOTween animations, and designed a responsive level system using a single-scene architecture.",
+        "impact": "Delivered a polished hyper-casual prototype featuring responsive controls, smooth UI transitions, scalable level progression, and an engaging candy-themed visual style optimized for mobile devices."
+      },
+      "description": "Candy Wire Gyro is a hyper-casual precision game where players guide a metal loop through a twisting candy-shaped wire without touching it. Players can choose between Gyroscope Control or Button Control, making the game accessible on different mobile devices. The objective is to carefully navigate through each obstacle-filled level while avoiding collisions and reaching the finish point. The game features colorful candy-themed visuals, simple one-touch gameplay, multiple handcrafted levels, and smooth controls designed for quick and enjoyable play sessions.",
+      "mechanics": [
+        "Precision wire navigation without touching obstacles",
+        "Dual control modes (Gyroscope or Button input)",
+        "Collision-based gameplay & instant level retry",
+        "Level-based progression with handcrafted stages",
+        "Simple mobile controls & intuitive navigation",
+        "Particle and sound effect feedback for collisions",
+        "Candy-themed UI with animated menus using DOTween"
+      ],
+      "features": [
+        "Dual input control system (Gyro & Touch Buttons)",
+        "DOTween animated candy UI architecture",
+        "Handcrafted level progression & collision detection",
+        "Single-scene dynamic level loader",
+        "Audio visual feedback & particle FX"
+      ],
+      "technologies": [
+        "C#",
+        "Unity",
+        "Unity New Input System",
+        "Gyroscope API",
+        "DOTween",
+        "Particle System",
+        "Unity UI",
+        "Mobile Input"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,119 @@
+/**
+ * ╔══════════════════════════════════════════════════════════╗
+ * ║   THEME.CSS — Single Source of Truth for Design Tokens  ║
+ * ║   Edit this file ONLY to change colors, fonts, spacing. ║
+ * ╚══════════════════════════════════════════════════════════╝
+ */
+
+:root {
+  /* ── Background Colors ──────────────────────────────────── */
+  --bg-0:          #050507;     /* deepest black */
+  --bg-1:          #0a0a0f;     /* panel background */
+  --bg-2:          #0d0d18;     /* card background */
+  --bg-3:          #111120;     /* elevated surface */
+
+  /* ── Primary Accent — Neon Green ───────────────────────── */
+  --accent-1:      #39ff6a;     /* neon green primary */
+  --accent-1-dim:  #1a7a33;     /* dimmed green */
+  --accent-1-glow: rgba(57, 255, 106, 0.6);
+  --accent-1-soft: rgba(57, 255, 106, 0.12);
+
+  /* ── Secondary Accent — Neon Magenta ───────────────────── */
+  --accent-2:      #ff2bd6;     /* neon magenta secondary */
+  --accent-2-dim:  #8a1575;     /* dimmed magenta */
+  --accent-2-glow: rgba(255, 43, 214, 0.6);
+  --accent-2-soft: rgba(255, 43, 214, 0.12);
+
+  /* ── Tertiary Accent — Electric Blue ───────────────────── */
+  --accent-3:      #00d4ff;     /* electric cyan */
+  --accent-3-soft: rgba(0, 212, 255, 0.12);
+
+  /* ── Text Colors ────────────────────────────────────────── */
+  --text-0:        #ffffff;     /* primary text (bright white) */
+  --text-1:        #dcf6e3;     /* secondary text (highly readable light green-tinted white) */
+  --text-2:        #8ddb9d;     /* muted text / labels (clearly visible medium green) */
+  --text-inv:      #050507;     /* inverted (on bright bg) */
+
+  /* ── Glass / Borders ────────────────────────────────────── */
+  --glass:         rgba(13, 13, 24, 0.92);
+  --glass-light:   rgba(255, 255, 255, 0.03);
+  --border:        rgba(57, 255, 106, 0.35);
+  --border-dim:    rgba(57, 255, 106, 0.15);
+  --border-hot:    rgba(57, 255, 106, 0.7);
+
+  /* ── Typography ─────────────────────────────────────────── */
+  --font-display:  'Press Start 2P', 'Courier New', monospace;  /* pixel headers */
+  --font-mono:     'Share Tech Mono', 'Courier New', monospace;  /* retro mono body */
+  --font-ui:       'Share Tech Mono', 'Courier New', monospace;  /* clean UI */
+
+  /* ── Font Sizes ─────────────────────────────────────────── */
+  --fs-xs:         14px;   /* minimum — labels, tags, badges      */
+  --fs-sm:         16px;   /* small UI text, back buttons         */
+  --fs-md:         18px;   /* body copy, paragraphs               */
+  --fs-lg:         22px;   /* sub-headings                        */
+  --fs-xl:         28px;   /* headings                            */
+  --fs-2xl:        38px;   /* large stat numbers                  */
+  --fs-3xl:        54px;   /* hero headings                       */
+
+  /* ── Spacing ────────────────────────────────────────────── */
+  --sp-1:          4px;
+  --sp-2:          8px;
+  --sp-3:          12px;
+  --sp-4:          16px;
+  --sp-5:          24px;
+  --sp-6:          32px;
+  --sp-7:          48px;
+  --sp-8:          64px;
+
+  /* ── Border Radius ──────────────────────────────────────── */
+  --r-sm:          4px;
+  --r-md:          8px;
+  --r-lg:          12px;
+  --r-xl:          16px;
+
+  /* ── Z-Index Scale ──────────────────────────────────────── */
+  --z-bg:          0;
+  --z-grid:        1;
+  --z-shapes:      2;
+  --z-vignette:    3;
+  --z-app:         4;
+  --z-panel:       10;
+  --z-overlay:     20;
+  --z-scanlines:   50;
+  --z-hud:         60;
+  --z-toast:       70;
+  --z-cursor:      100;
+  --z-boot:        999;
+
+  /* ── Transitions ────────────────────────────────────────── */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-expo:  cubic-bezier(0.7, 0, 0.84, 0);
+  --ease-bounce:   cubic-bezier(0.34, 1.56, 0.64, 1);
+  --t-fast:        0.15s;
+  --t-mid:         0.35s;
+  --t-slow:        0.65s;
+  --t-panel:       0.8s;
+
+  /* ── Glow Effects ───────────────────────────────────────── */
+  --glow-1:        0 0 6px var(--accent-1-glow), 0 0 15px rgba(57,255,106,0.25);
+  --glow-2:        0 0 6px var(--accent-2-glow), 0 0 15px rgba(255,43,214,0.25);
+  --glow-text:     0 0 5px var(--accent-1-glow);
+  --pixel-shadow:  4px 4px 0 #000000;
+  --pixel-shadow-sm: 2px 2px 0 #000000;
+
+  /* ── Hub Dimensions ─────────────────────────────────────── */
+  --hub-size:      min(78vw, 620px);
+  --hub-radius:    44%;    /* orbit radius as % of hub */
+
+  /* ── Grid ───────────────────────────────────────────────── */
+  --grid-size:     48px;
+  --grid-color:    rgba(57, 255, 106, 0.07);
+}
+
+/* ── Dark mode is the only mode ─────────────────────────── */
+@media (prefers-color-scheme: light) {
+  :root {
+    /* intentionally keep dark — this is a cyberpunk portfolio */
+    color-scheme: dark;
+  }
+}

@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+  <title>SUNDHARAM // Gameplay Programmer Portfolio</title>
+  <meta name="description"
+    content="Gameplay programmer portfolio — Unreal Engine 5 and Unity prototypes, puzzle systems, AI, and combat mechanics.">
+  <meta name="author" content="Sundharam">
+  <meta property="og:title" content="SUNDHARAM // Gameplay Programmer Portfolio">
+  <meta property="og:description"
+    content="Gameplay programmer portfolio — Unreal Engine 5 and Unity prototypes, puzzle systems, AI, and combat mechanics.">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#050507">
+
+  <!-- Google Fonts: Pixel display + retro mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&family=Share+Tech+Mono&display=swap"
+    rel="stylesheet">
+
+  <!-- ── Design Tokens (edit for full theme change) ── -->
+  <link rel="stylesheet" href="config/theme.css">
+
+  <!-- ── Base Styles ── -->
+  <link rel="stylesheet" href="styles/reset.css">
+  <link rel="stylesheet" href="styles/animations.css">
+  <link rel="stylesheet" href="styles/effects.css">
+  <link rel="stylesheet" href="styles/layout.css">
+  <link rel="stylesheet" href="styles/home.css">
+  <link rel="stylesheet" href="styles/cards.css">
+  <link rel="stylesheet" href="styles/sections.css">
+  <link rel="stylesheet" href="styles/dashboard.css">
+  <link rel="stylesheet" href="styles/responsive.css">
+</head>
+
+<body>
+
+  <!-- ════════════════════════════════════════════
+     BOOT SCREEN
+     ════════════════════════════════════════════ -->
+  <div id="bootScreen" role="dialog" aria-modal="true" aria-label="Loading screen">
+    <div class="boot-inner">
+      <div class="boot-logo" id="bootLogo">SUNDHARAM.DEV</div>
+      <div class="boot-subtitle" id="bootSubtitle">GAMEPLAY PROGRAMMER // UNREAL ENGINE 5 + UNITY</div>
+      
+      <div class="boot-loading-container">
+        <!-- Message box -->
+        <div class="boot-msg-box">
+          <span class="boot-msg-prefix">&gt;&nbsp;</span>
+          <span id="bootMsg">Initializing DevVerse...</span>
+          <span class="blink-cursor">_</span>
+        </div>
+
+        <!-- Custom retro loading bar -->
+        <div class="boot-custom-bar-wrap">
+          <span class="bar-bracket">[</span>
+          <div class="boot-bar-blocks" id="bootBarBlocks"></div>
+          <span class="bar-bracket">]</span>
+          <span class="boot-pct" id="bootPct">0%</span>
+        </div>
+
+        <!-- Terminal Logs -->
+        <div class="boot-terminal-logs" id="bootTerminalLogs"></div>
+      </div>
+
+      <div class="boot-press-container">
+        <div class="boot-press" id="bootPress" role="button" tabindex="0">&gt; PRESS START TO ENTER DEVVERSE _</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════════════
+     XP / LEVEL HUD
+     ════════════════════════════════════════════ -->
+  <div id="xpHud" role="status" aria-label="Exploration progress">
+    <div class="xp-level">LV <span id="xpLevel">1</span></div>
+    <div class="xp-track" aria-hidden="true">
+      <div class="xp-fill" id="xpFill"></div>
+    </div>
+    <div class="xp-label" id="xpLabel">0 / 6 MODULES EXPLORED</div>
+  </div>
+
+  <!-- ════════════════════════════════════════════
+     ACHIEVEMENT TOAST
+     ════════════════════════════════════════════ -->
+  <div id="achToast" role="alert" aria-live="polite">
+    <div class="ach-icon">★</div>
+    <div>
+      <div class="ach-label">ACHIEVEMENT UNLOCKED</div>
+      <div class="ach-text" id="achDesc"></div>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════════════
+     CURSOR GLOW (desktop only, hidden on touch)
+     ════════════════════════════════════════════ -->
+  <div id="cursorGlow" aria-hidden="true"></div>
+
+  <!-- ════════════════════════════════════════════
+     BACKGROUND LAYERS (z-order: bg→grid→rays→vignette→scanlines)
+     ════════════════════════════════════════════ -->
+  <canvas id="bgCanvas" aria-hidden="true"></canvas>
+  <div class="grid-layer" aria-hidden="true"></div>
+  <div class="rays" aria-hidden="true"></div>
+  <div class="vignette" aria-hidden="true"></div>
+  <div class="vhs-noise" aria-hidden="true"></div>
+  <div class="scanlines" aria-hidden="true"></div>
+  <div class="glitch-bar" aria-hidden="true"></div>
+
+  <!-- ════════════════════════════════════════════
+     APP SHELL
+     ════════════════════════════════════════════ -->
+  <div class="app">
+
+    <!-- ═══════════════ HOME SCREEN ═══════════════ -->
+    <section id="home" aria-label="Navigation hub">
+
+      <!-- Top Left Branding -->
+      <div class="brand-container">
+        <div class="brand" id="brandName" aria-label="Portfolio brand">SUNDHARAM.DEV</div>
+        <div class="tagline">GAMEPLAY PROGRAMMER // C++ • UE5 • UNITY</div>
+      </div>
+
+      <!-- Top Center Title -->
+      <div class="center-map-header">
+        <div class="explore-world-subtitle">CHOOSE YOUR DESTINATION</div>
+        <div class="explore-world-title">EXPLORE MY WORLD</div>
+        <div class="header-target-dot"></div>
+      </div>
+
+      <!-- Top Right Quick Access -->
+      <div class="top-quick-access">
+        <button class="quick-btn" id="quickResume" data-target="panel-resume">
+          <svg class="btn-icon" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+          RESUME
+        </button>
+        <a class="quick-btn" id="quickGithub" href="https://github.com/" target="_blank" rel="noopener">
+          <svg class="btn-icon" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+          GITHUB
+        </a>
+        <button class="quick-btn" id="quickContact" data-target="panel-contact">
+          <svg class="btn-icon" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+          CONTACT
+        </button>
+        <button class="quick-btn highlight-purple" id="quickPlayground" data-target="panel-games">
+          <svg class="btn-icon" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="6" width="20" height="12" rx="2"></rect><path d="M12 12h.01"></path><path d="M15 12h.01"></path><path d="M18 12h.01"></path><path d="M6 12h4M8 10v4"></path></svg>
+          PLAYGROUND
+        </button>
+      </div>
+
+      <button class="sound-toggle" id="soundToggle" title="Toggle background music"
+        aria-label="Toggle background music">
+        ♪
+      </button>
+
+      <!-- Fictional Interactive World Map -->
+      <div class="map-container" role="navigation" aria-label="World map navigation">
+        <svg class="map-svg" id="mapSvg"></svg>
+        <div class="map-nodes" id="mapNodes">
+          <!-- Injected dynamically by hub.js -->
+        </div>
+      </div>
+
+      <!-- HUD: LEFT SIDE PANELS -->
+      <div class="left-hud-panels">
+        <!-- SYSTEM STATUS -->
+        <div class="hud-panel">
+          <div class="panel-header">◆ SYSTEM STATUS</div>
+          <div class="status-row"><span>CORES ACTIVE :</span> <span class="accent-green">16/16</span></div>
+          <div class="status-row"><span>SYS LATENCY :</span> <span class="accent-green">18ms</span></div>
+          <div class="status-row"><span>UPTIME :</span> <span class="accent-green">99.9%</span></div>
+          <div class="status-row"><span>POWER :</span> <span class="accent-green">OPTIMAL</span></div>
+          
+          <!-- Oscilloscope visualizer -->
+          <div class="hud-oscilloscope">
+            <svg viewBox="0 0 160 30" width="100%" height="30">
+              <path class="oscilloscope-line" d="M 0 15 Q 15 2, 30 15 T 60 15 T 90 15 T 120 15 T 160 15" fill="none" stroke="#39ff6a" stroke-width="1.5"></path>
+              <path class="oscilloscope-line-glow" d="M 0 15 Q 15 2, 30 15 T 60 15 T 90 15 T 120 15 T 160 15" fill="none" stroke="#39ff6a" stroke-width="3" opacity="0.3"></path>
+            </svg>
+          </div>
+        </div>
+        
+        <!-- LIVE FEED -->
+        <div class="hud-panel">
+          <div class="panel-header">◆ LIVE FEED</div>
+          <div class="live-feed-box">
+            <div class="feed-row"><span class="accent-green">[OK]</span> SYSTEM BOOTED</div>
+            <div class="feed-row"><span class="accent-green">[OK]</span> MAP LOADED</div>
+            <div class="feed-row"><span class="accent-green">[OK]</span> REGIONS ONLINE</div>
+            <div class="feed-row blink-fast">&gt; AWAITING COMMAND</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- HUD: RIGHT SIDE PANELS -->
+      <div class="right-hud-panels">
+        <!-- ACHIEVEMENTS -->
+        <div class="hud-panel">
+          <div class="panel-header">◆ ACHIEVEMENTS</div>
+          <div class="ach-row"><span>Clean Code</span> <span class="accent-magenta">Unlocked</span></div>
+          <div class="ach-row"><span>Bug Slayer</span> <span class="accent-magenta">Unlocked</span></div>
+          <div class="ach-row"><span>Problem Solver</span> <span class="accent-magenta">Unlocked</span></div>
+          <div class="ach-row"><span>Game Builder</span> <span class="accent-magenta">Unlocked</span></div>
+          <button class="ach-view-all-btn" id="btnAchievementsViewAll">VIEW ALL ➔</button>
+        </div>
+
+        <!-- NAVIGATION -->
+        <div class="hud-panel">
+          <div class="panel-header">◆ NAVIGATION</div>
+          <div class="control-row"><span class="key-cap">↑</span> <span class="key-cap">↓</span> <span class="key-cap">←</span> <span class="key-cap">→</span> <span>MOVE CURSOR</span></div>
+          <div class="control-row"><span class="key-cap">ENTER</span> <span>SELECT REGION</span></div>
+          <div class="control-row"><span class="key-cap">ESC</span> <span>RETURN TO HUB</span></div>
+        </div>
+      </div>
+
+      <!-- Bottom HUD container -->
+      <div class="bottom-hud-row">
+        <!-- Left: Level bar -->
+        <div class="bottom-level-hud">
+          <span class="level-lbl">LV 4</span>
+          <div class="level-blocks">
+            <span class="level-block active"></span>
+            <span class="level-block active"></span>
+            <span class="level-block active"></span>
+            <span class="level-block"></span>
+            <span class="level-block"></span>
+            <span class="level-block"></span>
+          </div>
+          <span class="explored-pct">3 / 6 MODULES EXPLORED • 50%</span>
+        </div>
+
+        <!-- Center: Hint Text -->
+        <div class="hub-hint" id="hubHint" aria-hidden="true">SELECT A REGION TO EXPLORE MY WORLD</div>
+
+        <!-- Right: Social Links -->
+        <div class="bottom-socials">
+          <a href="https://www.linkedin.com/in/sundharam-i" target="_blank" rel="noopener" class="social-icon-btn" title="LinkedIn">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.779-1.75-1.75s.784-1.75 1.75-1.75 1.75.779 1.75 1.75-.784 1.75-1.75 1.75zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+          </a>
+          <a href="https://github.com/" target="_blank" rel="noopener" class="social-icon-btn" title="GitHub">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+          </a>
+          <a href="https://youtube.com/" target="_blank" rel="noopener" class="social-icon-btn" title="YouTube">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M23.498 6.163c-.272-1.025-1.078-1.832-2.103-2.103C19.537 3.5 12 3.5 12 3.5s-7.537 0-9.395.56c-1.025.271-1.832 1.078-2.103 2.103C0 8.021 0 12 0 12s0 3.979.56 5.837c.271 1.025 1.078 1.832 2.103 2.103C4.463 20.5 12 20.5 12 20.5s7.537 0 9.395-.56c1.025-.271 1.832-1.078 2.103-2.103C24 15.979 24 12 24 12s0-3.979-.502-5.837zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          </a>
+          <a href="mailto:sundharam.dev@gmail.com" class="social-icon-btn" title="Email">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="status-bar" aria-hidden="true"></div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+       PANEL: GAMES (quick play cards)
+       ═══════════════════════════════════════════ -->
+    <section class="panel" id="panel-games" aria-label="Play Games">
+      <div class="panel-bg" aria-hidden="true"></div>
+      <div class="panel-top">
+        <button class="back-btn" data-back aria-label="Back to main menu">⟵ MAIN MENU</button>
+        <div class="panel-title">PLAY GAMES</div>
+      </div>
+      <div class="panel-body">
+        <p class="section-lead">
+          Prototypes and playable builds spanning <b>Unreal Engine 5</b> and <b>Unity</b> —
+          puzzle systems, horror AI, vehicle combat, and survival shooters.
+        </p>
+        <div class="card-grid" id="gamesGrid"></div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+       PANEL: PROJECTS HUB (engine choice)
+       ═══════════════════════════════════════════ -->
+    <section class="panel" id="panel-projects" aria-label="Projects">
+      <div class="panel-bg" aria-hidden="true"></div>
+      <div class="panel-top">
+        <button class="back-btn" data-back aria-label="Back to main menu">⟵ MAIN MENU</button>
+        <div class="panel-title">PROJECTS</div>
+      </div>
+      <div class="panel-body">
+        <p class="section-lead">
+          Choose an engine to browse the project library. Each project includes full mechanics,
+          feature breakdowns, tech stack, and media.
+        </p>
+        <div class="engine-grid">
+          <div class="engine-card" id="chooseUnreal" role="button" tabindex="0" aria-label="Unreal Engine 5 projects">
+            <div class="engine-glow ue" aria-hidden="true"></div>
+            <div class="engine-icon">◆</div>
+            <h2>UNREAL ENGINE 5</h2>
+            <p>C++ & Blueprint prototypes — puzzle, horror, platformer, and vehicle combat systems.</p>
+            <span class="engine-count" id="ueCount">0 PROJECTS</span>
+          </div>
+          <div class="engine-card un" id="chooseUnity" role="button" tabindex="0" aria-label="Unity projects">
+            <div class="engine-glow un" aria-hidden="true"></div>
+            <div class="engine-icon">◈</div>
+            <h2>UNITY</h2>
+            <p>C# arcade, survival, and mobile-optimized cross-platform prototypes.</p>
+            <span class="engine-count" id="unCount">0 PROJECTS</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+       PANEL: PROJECT LIST (filtered by engine)
+       ═══════════════════════════════════════════ -->
+    <section class="panel" id="panel-project-list" aria-label="Project list">
+      <div class="panel-bg" aria-hidden="true"></div>
+      <div class="panel-top">
+        <button class="back-btn" id="backToProjects" aria-label="Back to engine selection">⟵ PROJECTS</button>
+        <div class="panel-title" id="listTitle">PROJECT LIST</div>
+      </div>
+      <div class="panel-body">
+        <div class="card-grid" id="projectsGrid"></div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+       PANEL: GAME / PROJECT DETAIL PAGE
+       ═══════════════════════════════════════════ -->
+    <!-- ═══════════════════════════════════════════
+       PANEL: GAME / PROJECT DETAIL PAGE
+       ═══════════════════════════════════════════ -->
+    <section class="panel" id="panel-game-page" aria-label="Project detail">
+      <div class="panel-bg" aria-hidden="true"></div>
+      
+      <!-- Top Header Bar -->
+      <header class="detail-header">
+        <div class="brand-container-detail">
+          <div class="brand-detail">SUNDHARAM.DEV</div>
+          <div class="tagline-detail">GAMEPLAY PROGRAMMER // C++ • UE5 • UNITY</div>
+        </div>
+        
+        <div class="center-detail-header">
+          <div class="detail-subtitle">PROJECT KINGDOM</div>
+          <div class="detail-title">PROJECT DETAILS</div>
+        </div>
+        
+        <div class="top-quick-access-detail">
+          <button class="quick-btn" id="detailQuickResume">
+            <svg class="btn-icon" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+            RESUME
+          </button>
+          <a class="quick-btn" id="detailQuickGithub" href="https://github.com/" target="_blank" rel="noopener">
+            <svg class="btn-icon" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+            GITHUB
+          </a>
+          <button class="quick-btn" id="detailQuickContact">
+            <svg class="btn-icon" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+            CONTACT
+          </button>
+          <button class="quick-btn highlight-purple" id="detailQuickPlayground">
+            <svg class="btn-icon" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="6" width="20" height="12" rx="2"></rect><path d="M12 12h.01"></path><path d="M15 12h.01"></path><path d="M18 12h.01"></path><path d="M6 12h4M8 10v4"></path></svg>
+            PLAYGROUND
+          </button>
+        </div>
+      </header>
+
+      <!-- Main Dashboard Content Scroll Container -->
+      <div class="dashboard-scroll-area">
+        
+        <!-- Back Button Row -->
+        <div class="dashboard-back-row">
+          <button class="back-btn" id="backToList">⟵ BACK TO PROJECTS</button>
+        </div>
+
+        <!-- 2-Column Main Grid -->
+        <div class="dashboard-main-grid">
+          
+          <!-- Left Column: Title, Video, Screenshots -->
+          <div class="detail-col-left">
+            
+            <!-- Project Title & Badges Card -->
+            <div class="detail-title-card">
+              <div class="title-top-row">
+                <div class="title-left-text">
+                  <span class="detail-label-prefix">PROJECT :</span>
+                  <h1 id="detailProjectTitle">CHRONO SHIFT</h1>
+                </div>
+                <div class="status-tag-orange" id="detailStatusTag">PROTOTYPE</div>
+              </div>
+              <div class="title-badges-row" id="detailProjectBadges">
+                <!-- Badges injected dynamically -->
+              </div>
+            </div>
+
+            <!-- Video Player Slot -->
+            <div class="detail-video-card" id="detailVideoCard">
+              <!-- Video / iframe injected dynamically -->
+            </div>
+
+            <!-- Screenshots Card -->
+            <div class="detail-screenshots-card">
+              <div class="card-header-tag">📷 SCREENSHOTS</div>
+              <div class="screenshot-carousel-wrap">
+                <button class="carousel-arrow prev" id="carouselPrev">◀</button>
+                <div class="screenshot-viewport" id="carouselViewport">
+                  <!-- Screenshots injected dynamically -->
+                </div>
+                <button class="carousel-arrow next" id="carouselNext">▶</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: Description, Core Mechanics, Tech & Tools -->
+          <div class="detail-col-right">
+            
+            <!-- Description Card -->
+            <div class="detail-card-panel">
+              <div class="card-header-tag">📄 DESCRIPTION</div>
+              <p class="desc-paragraph" id="detailDescriptionText"></p>
+            </div>
+
+            <!-- Core Mechanics Card -->
+            <div class="detail-card-panel">
+              <div class="card-header-tag">⚙ CORE MECHANICS</div>
+              <div class="mechanics-cards-grid" id="detailMechanicsGrid">
+                <!-- 4 Mechanic boxes injected dynamically -->
+              </div>
+            </div>
+
+            <!-- Tech & Tools Card -->
+            <div class="detail-card-panel">
+              <div class="card-header-tag">&lt;/&gt; TECH &amp; TOOLS</div>
+              <div class="tech-tools-row" id="detailTechToolsRow">
+                <!-- Tech badges injected dynamically -->
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Full-Width Bottom Developer Notes Row -->
+        <div class="detail-devnotes-card">
+          <div class="card-header-tag">💬 DEVELOPER NOTES</div>
+          <div class="devnotes-3col-grid">
+            <div class="devnote-col">
+              <span class="devnote-title orange">CHALLENGE</span>
+              <p class="devnote-desc" id="detailChallengeText"></p>
+            </div>
+            <div class="devnote-col">
+              <span class="devnote-title green">SOLUTION</span>
+              <p class="devnote-desc" id="detailSolutionText"></p>
+            </div>
+            <div class="devnote-col">
+              <span class="devnote-title cyan">IMPACT</span>
+              <p class="devnote-desc" id="detailImpactText"></p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+       PANEL: SKILLS
+       ═══════════════════════════════════════════ -->
+    <section class="panel" id="panel-skills" aria-label="Skills">
+      <div class="panel-bg" aria-hidden="true"></div>
+      <div class="panel-top">
+        <button class="back-btn" data-back aria-label="Back to main menu">⟵ MAIN MENU</button>
+        <div class="panel-title">SKILLS</div>
+      </div>
+      <div class="panel-body" id="skillsBody">
+        <!-- Populated by skills.js -->
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+       PANEL: ABOUT
+       ═══════════════════════════════════════════ -->
+    <section class="panel" id="panel-about" aria-label="About me">
+      <div class="panel-bg" aria-hidden="true"></div>
+      <div class="panel-top">
+        <button class="back-btn" data-back aria-label="Back to main menu">⟵ MAIN MENU</button>
+        <div class="panel-title">ABOUT ME</div>
+      </div>
+      <div class="panel-body">
+        <!-- Populated by about.js -->
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+       PANEL: RESUME
+       ═══════════════════════════════════════════ -->
+    <section class="panel" id="panel-resume" aria-label="Resume">
+      <div class="panel-bg" aria-hidden="true"></div>
+      <div class="panel-top">
+        <button class="back-btn" data-back aria-label="Back to main menu">⟵ MAIN MENU</button>
+        <div class="panel-title">RESUME</div>
+      </div>
+      <div class="panel-body">
+        <!-- Populated by resume.js -->
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+       PANEL: CONTACT
+       ═══════════════════════════════════════════ -->
+    <section class="panel" id="panel-contact" aria-label="Contact">
+      <div class="panel-bg" aria-hidden="true"></div>
+      <div class="panel-top">
+        <button class="back-btn" data-back aria-label="Back to main menu">⟵ MAIN MENU</button>
+        <div class="panel-title">CONTACT</div>
+      </div>
+      <div class="panel-body">
+        <!-- Populated by contact.js -->
+      </div>
+    </section>
+
+  </div><!-- /.app -->
+
+  <!-- BGM audio element -->
+  <audio id="bgm" loop preload="none" aria-hidden="true"></audio>
+
+  <!-- ════════════════════════════════════════════
+     SCRIPTS — load order matters
+     ════════════════════════════════════════════ -->
+  <script src="scripts/config-loader.js"></script>
+  <script src="scripts/audio.js"></script>
+  <script src="scripts/xp.js"></script>
+  <script src="scripts/nav.js"></script>
+  <script src="scripts/background.js"></script>
+  <script src="scripts/boot.js"></script>
+  <script src="scripts/hub.js"></script>
+  <script src="scripts/projects.js"></script>
+  <script src="scripts/skills.js"></script>
+  <script src="scripts/about.js"></script>
+  <script src="scripts/resume.js"></script>
+  <script src="scripts/contact.js"></script>
+  <script src="scripts/effects.js"></script>
+  <script src="scripts/main.js"></script>
+
+</body>
+
+</html>

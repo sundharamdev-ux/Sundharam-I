@@ -1,0 +1,70 @@
+{
+  "_comment": "Edit skill categories and percentages here. Bars animate automatically.",
+
+  "categories": [
+    {
+      "id": "engines",
+      "label": "GAME ENGINES",
+      "icon": "◆",
+      "skills": [
+        { "name": "Unreal Engine 5",  "level": 92, "tag": "PRIMARY" },
+        { "name": "Unity",            "level": 88, "tag": "PRIMARY" }
+      ]
+    },
+    {
+      "id": "programming",
+      "label": "PROGRAMMING",
+      "icon": "⌨",
+      "skills": [
+        { "name": "C++",                         "level": 80, "tag": "SYSTEMS" },
+        { "name": "C#",                          "level": 90, "tag": "GAMEPLAY" },
+        { "name": "Blueprint Visual Scripting",  "level": 94, "tag": "UE5" }
+      ]
+    },
+    {
+      "id": "gameplay",
+      "label": "GAMEPLAY SYSTEMS",
+      "icon": "▶",
+      "skills": [
+        { "name": "AI Behaviour & Pathing",          "level": 83 },
+        { "name": "Physics & Collision",             "level": 85 },
+        { "name": "Puzzle & State Systems",          "level": 90 },
+        { "name": "Combat & Vehicle Systems",        "level": 78 },
+        { "name": "Character Controllers",           "level": 88 },
+        { "name": "Camera Systems",                  "level": 82 }
+      ]
+    },
+    {
+      "id": "graphics",
+      "label": "GRAPHICS & VFX",
+      "icon": "◈",
+      "skills": [
+        { "name": "Niagara Particle Systems", "level": 75 },
+        { "name": "Lumen Global Illumination", "level": 72 },
+        { "name": "Shader / Material Graphs",  "level": 70 }
+      ]
+    },
+    {
+      "id": "platforms",
+      "label": "PLATFORMS & TOOLS",
+      "icon": "◧",
+      "skills": [
+        { "name": "Cross-platform Builds (Android/Win/WebGL)", "level": 82 },
+        { "name": "UI / UX Systems",                           "level": 80 },
+        { "name": "New Input System (Unity)",                  "level": 85 },
+        { "name": "Git Version Control",                       "level": 80 }
+      ]
+    },
+    {
+      "id": "creative",
+      "label": "CREATIVE TOOLS",
+      "icon": "✦",
+      "skills": [
+        { "name": "Adobe Photoshop",  "level": 80 },
+        { "name": "DaVinci Resolve",  "level": 75 },
+        { "name": "Krita",            "level": 78 },
+        { "name": "Figma",            "level": 82 }
+      ]
+    }
+  ]
+}

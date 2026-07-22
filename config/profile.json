@@ -1,0 +1,63 @@
+{
+  "_comment": "Edit this file to update your About Me section. No HTML editing required.",
+  "avatar": "assets/images/photo.png",
+  "eyebrow": "GAMEPLAY PROGRAMMER",
+  "name": "Sundharam",
+  "role": "Gameplay Programmer",
+  "bio": "I build responsive gameplay systems and interactive mechanics using Unreal Engine 5, C++, and Blueprint. I focus on player feel, rapid prototyping, optimization, and creating satisfying gameplay experiences.",
+  "coreSkills": [
+    "Unreal Engine 5",
+    "C++",
+    "Blueprint",
+    "Unity",
+    "Git",
+    "Rider",
+    "Visual Studio"
+  ],
+  "stats": [
+    {
+      "value": "10+",
+      "label": "PROJECTS BUILT"
+    },
+    {
+      "value": "20+",
+      "label": "MECHANICS PROTOTYPED"
+    },
+    {
+      "value": "3",
+      "label": "PLATFORMS TARGETED"
+    },
+    {
+      "value": "2+",
+      "label": "YEARS EXPERIENCE"
+    }
+  ],
+  "details": [
+    {
+      "label": "ROLE",
+      "value": "Gameplay Programmer"
+    },
+    {
+      "label": "FOCUS",
+      "value": ["Player Feel", "Gameplay Systems", "Optimization", "Rapid Prototyping"]
+    },
+    {
+      "label": "ENGINES",
+      "value": ["Unreal Engine 5", "Unity"]
+    },
+    {
+      "label": "LANGUAGES",
+      "value": ["C++", "C#", "Blueprint"]
+    },
+    {
+      "label": "TOOLS",
+      "value": ["Git", "Rider", "Photoshop", "Figma"]
+    }
+  ],
+  "actions": [
+    { "label": "[ Resume ]", "type": "panel", "target": "panel-resume", "id": "btn-resume" },
+    { "label": "[ GitHub ]", "type": "link", "target": "https://github.com/", "id": "btn-github" },
+    { "label": "[ LinkedIn ]", "type": "link", "target": "https://www.linkedin.com/in/sundharam-i", "id": "btn-linkedin" },
+    { "label": "[ Contact ]", "type": "panel", "target": "panel-contact", "id": "btn-contact" }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "_comment": "Edit resume data here. Update the resumeFile path when your PDF is ready.",
+
+  "resumeFile": "assets/resume.pdf",
+  "_comment_resumeFile": "Drop your PDF into assets/ and update this path.",
+
+  "headline": "GAMEPLAY PROGRAMMER",
+  "summary": "Gameplay programmer specialising in Unreal Engine 5 and Unity — C++ systems, Blueprint logic, and C# gameplay code across puzzle, horror, arcade, and vehicle combat prototypes.",
+
+  "experience": [
+    {
+      "year": "2024",
+      "title": "Gameplay Programmer — UE5 Prototyping",
+      "company": "Independent / Self-Directed",
+      "type": "UNREAL",
+      "description": "C++ character controllers, Blueprint puzzle systems, AI behaviour, electricity & gravity mechanics across six prototypes including Chrono Isles, Haunted Village, and Dual Worlds."
+    },
+    {
+      "year": "2023",
+      "title": "Gameplay Programmer — Arcade & Mobile",
+      "company": "Independent / Self-Directed",
+      "type": "UNITY",
+      "description": "C# gameplay systems, cross-platform builds (Android / Windows / WebGL), input systems, UI, and AI for survival and arcade titles including Zombie Land, Color Triangle, and Land Shark."
+    }
+  ],
+
+  "education": [
+    {
+      "year": "2022–2024",
+      "degree": "Game Development",
+      "institution": "Add your institution",
+      "description": "Focused on gameplay programming, engine architecture, and interactive systems design."
+    }
+  ],
+
+  "certificates": [
+    {
+      "year": "2023",
+      "name": "Add your certification",
+      "issuer": "Issuing organization",
+      "url": ""
+    }
+  ],
+
+  "achievements": [
+    "Shipped 10+ playable game prototypes across UE5 and Unity",
+    "Released cross-platform titles on Android, Windows, and WebGL",
+    "Implemented custom AI systems without using pre-built frameworks",
+    "Built modular puzzle system architecture reused across 3 projects"
+  ]
+}

@@ -1,0 +1,320 @@
+/* ═══════════════════════════════════════════════
+   EFFECTS.CSS — CRT, Scanlines, VHS, Glitch,
+   Chromatic Aberration, Cursor, Ripple
+   ═══════════════════════════════════════════════ */
+
+/* ── Background Canvas ───────────────────────── */
+#bgCanvas {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-bg);
+  display: block;
+  pointer-events: none;
+}
+
+/* ── Moving Grid Floor ───────────────────────── */
+.grid-layer {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-grid);
+  pointer-events: none;
+  background-image:
+    linear-gradient(var(--grid-color) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
+  background-size: var(--grid-size) var(--grid-size);
+  mask-image: radial-gradient(ellipse 85% 75% at 50% 50%, black 30%, transparent 80%);
+  animation: gridDrift 25s linear infinite;
+}
+
+/* ── Glowing Rays ────────────────────────────── */
+.rays {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-grid);
+  pointer-events: none;
+  opacity: 0.4;
+  mix-blend-mode: screen;
+  background: conic-gradient(
+    from 0deg at 50% 42%,
+    transparent 0deg,
+    rgba(57, 255, 106, 0.06) 8deg,
+    transparent 16deg,
+    transparent 100deg,
+    rgba(255, 43, 214, 0.05) 108deg,
+    transparent 116deg,
+    transparent 220deg,
+    rgba(57, 255, 106, 0.05) 228deg,
+    transparent 236deg
+  );
+  animation: raySpin 80s linear infinite;
+}
+
+/* ── Vignette ────────────────────────────────── */
+.vignette {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-vignette);
+  pointer-events: none;
+  background: radial-gradient(
+    ellipse 90% 90% at 50% 50%,
+    transparent 45%,
+    rgba(2, 3, 8, 0.9) 100%
+  );
+}
+
+/* ── CRT Scanlines Overlay ───────────────────── */
+.scanlines {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-scanlines);
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.35) 0px,
+    rgba(0, 0, 0, 0.35) 1px,
+    transparent 2px,
+    transparent 4px
+  );
+  animation: crtFlicker 5s ease-in-out infinite;
+  mix-blend-mode: multiply;
+  opacity: 0.05;
+}
+
+/* ── CRT Rolling Line ────────────────────────── */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: calc(var(--z-scanlines) + 1);
+  pointer-events: none;
+  background: linear-gradient(
+    rgba(18, 16, 16, 0) 50%,
+    rgba(0, 0, 0, 0.12) 50%
+  );
+  background-size: 100% 4px;
+  animation: crtRoll 8s linear infinite;
+}
+
+/* ── CRT Screen Curvature / Edge Darkness ────── */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: calc(var(--z-scanlines) + 2);
+  pointer-events: none;
+  box-shadow: inset 0 0 12vw rgba(0, 0, 0, 0.8);
+}
+
+/* ── VHS Noise Texture Overlay ───────────────── */
+.vhs-noise {
+  position: fixed;
+  inset: 0;
+  z-index: calc(var(--z-scanlines) - 1);
+  pointer-events: none;
+  opacity: 0.03;
+  background-image:
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-size: 128px 128px;
+  animation: vhsFlicker 3s steps(1) infinite;
+  mix-blend-mode: overlay;
+}
+
+/* ── Horizontal VHS Glitch Bar ───────────────── */
+.glitch-bar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  height: 3px;
+  z-index: calc(var(--z-scanlines) + 3);
+  pointer-events: none;
+  background: linear-gradient(90deg,
+    transparent 0%,
+    var(--accent-1) 20%,
+    transparent 40%,
+    var(--accent-2) 60%,
+    transparent 80%
+  );
+  opacity: 0;
+  top: 30%;
+}
+.glitch-bar.active {
+  animation: scanH 0.4s linear;
+}
+
+/* ── Floating Retro Game Shapes ──────────────── */
+.retro-shape {
+  position: fixed;
+  z-index: var(--z-shapes);
+  pointer-events: none;
+  background: transparent;
+  animation: pixelFloat linear infinite;
+  opacity: 0.3;
+  transition: opacity 0.3s ease;
+}
+
+.retro-shape.shape-square {
+  border: 1.5px solid;
+  border-radius: 0;
+  box-shadow: 0 0 8px currentColor;
+}
+
+.retro-shape.shape-circle {
+  border: 1.5px solid;
+  border-radius: 50%;
+  box-shadow: 0 0 8px currentColor;
+}
+
+.retro-shape.shape-triangle {
+  background: currentColor;
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  opacity: 0.15;
+}
+
+.retro-shape.shape-cross {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  text-shadow: 0 0 6px currentColor;
+}
+
+/* ── Chromatic Aberration on headings ────────── */
+.chroma {
+  animation: chromaShift 8s ease-in-out infinite;
+}
+
+/* ── Glitch Effect (applied via JS) ─────────── */
+.glitch-layer {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  pointer-events: none;
+}
+.glitch-layer::before,
+.glitch-layer::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  opacity: 0;
+}
+.glitch-active .glitch-layer::before {
+  color: var(--accent-1);
+  transform: translateX(-3px);
+  animation: glitchLine 0.3s steps(1) 1;
+  opacity: 0.6;
+}
+.glitch-active .glitch-layer::after {
+  color: var(--accent-2);
+  transform: translateX(3px);
+  animation: glitchLine 0.3s steps(1) 1 0.05s;
+  opacity: 0.6;
+}
+
+/* ── Custom Cursor Glow (desktop) ────────────── */
+#cursorGlow {
+  position: fixed;
+  width: 24px;
+  height: 24px;
+  border: 2px solid var(--accent-1);
+  box-shadow:
+    0 0 14px var(--accent-1-glow),
+    inset 0 0 8px rgba(57,255,106,0.2);
+  transform: translate(-50%, -50%);
+  transition:
+    width var(--t-fast) ease,
+    height var(--t-fast) ease,
+    border-color var(--t-fast) ease,
+    box-shadow var(--t-fast) ease,
+    opacity var(--t-mid) ease;
+  pointer-events: none;
+  z-index: var(--z-cursor);
+  opacity: 0;
+}
+@media (hover: hover) and (pointer: fine) {
+  #cursorGlow { opacity: 1; }
+}
+#cursorGlow.big {
+  width: 48px;
+  height: 48px;
+  border-color: var(--accent-2);
+  box-shadow: 0 0 24px var(--accent-2-glow), 0 0 50px rgba(255,43,214,0.3);
+}
+
+/* ── Click Ripple ────────────────────────────── */
+.ripple {
+  position: fixed;
+  pointer-events: none;
+  z-index: calc(var(--z-cursor) - 10);
+  border: 2px solid var(--accent-1);
+  transform: translate(-50%, -50%) scale(0);
+  animation: rippleAnim 0.6s ease-out forwards;
+  opacity: 0.7;
+}
+
+/* ── Scan Line Effect (decorative) ──────────── */
+.scan-effect {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--accent-1), transparent);
+  box-shadow: 0 0 10px var(--accent-1-glow);
+  pointer-events: none;
+  animation: scanH 3s linear infinite;
+  opacity: 0.5;
+}
+
+/* ── Floating Retro Game Shapes ──────────────── */
+.retro-shape {
+  position: absolute;
+  pointer-events: none;
+  z-index: var(--z-shapes);
+  background: transparent;
+  border: 1.5px solid currentColor;
+  opacity: 0.2;
+  filter: drop-shadow(0 0 3px currentColor);
+  animation: floatShapeA linear infinite;
+  box-sizing: border-box;
+}
+
+/* Alternate animations */
+.retro-shape:nth-child(even) {
+  animation-name: floatShapeB;
+}
+
+/* Shape-specific styling */
+.shape-square {
+  /* Default border styling already creates a square */
+}
+
+.shape-circle {
+  border-radius: 50%;
+}
+
+.shape-triangle {
+  border: none !important;
+  background-color: currentColor;
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpolygon points='50,15 90,85 10,85' stroke='black' stroke-width='10' fill='none'/%3E%3C/svg%3E");
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpolygon points='50,15 90,85 10,85' stroke='black' stroke-width='10' fill='none'/%3E%3C/svg%3E");
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+}
+
+.shape-cross {
+  border: none !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 1;
+  text-shadow: 0 0 3px currentColor;
+}
+

@@ -1,0 +1,478 @@
+/* ═══════════════════════════════════════════════
+   LAYOUT.CSS — App Shell, Panels, Navigation
+   ═══════════════════════════════════════════════ */
+
+/* ── App Shell ───────────────────────────────── */
+.app {
+  position: relative;
+  z-index: var(--z-app);
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* ── Panel Base ──────────────────────────────── */
+.panel {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-panel);
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  pointer-events: none;
+  transform: scale(1.05);
+  transition:
+    opacity var(--t-panel) var(--ease-out-expo),
+    transform var(--t-panel) var(--ease-out-expo);
+  will-change: opacity, transform;
+}
+.panel.open {
+  opacity: 1;
+  pointer-events: auto;
+  transform: scale(1);
+}
+
+/* ── Panel Background ────────────────────────── */
+.panel-bg {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(
+    155deg,
+    rgba(5, 5, 10, 0.98) 0%,
+    rgba(10, 8, 22, 0.98) 50%,
+    rgba(5, 8, 20, 0.98) 100%
+  );
+}
+
+/* Grid on panel bg */
+.panel-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(57,255,106,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(57,255,106,0.04) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: linear-gradient(180deg, transparent 0%, black 20%, black 80%, transparent 100%);
+}
+
+/* ── Panel Top Bar ───────────────────────────── */
+.panel-top {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-4);
+  padding: var(--sp-5) var(--sp-6);
+  border-bottom: 2px solid var(--border);
+  background: rgba(5, 5, 12, 0.6);
+  backdrop-filter: blur(10px);
+  flex-shrink: 0;
+  position: relative;
+}
+
+/* Terminal-style top bar decoration */
+.panel-top::before {
+  content: "● ● ●";
+  position: absolute;
+  right: var(--sp-6);
+  font-size: var(--fs-xs);
+  color: var(--accent-1-dim);
+  letter-spacing: 6px;
+}
+
+.panel-top-right {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: var(--sp-4);
+  padding-right: 60px; /* space for the ● ● ● */
+}
+
+/* ── Back Button ─────────────────────────────── */
+.back-btn {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  padding: 10px var(--sp-4);
+  font-family: var(--font-display);
+  font-size: 12px;
+  letter-spacing: 2px;
+  color: var(--accent-1);
+  border: 2px solid var(--border);
+  background: var(--bg-0);
+  box-shadow: var(--pixel-shadow);
+  transition:
+    transform var(--t-fast) ease,
+    box-shadow var(--t-fast) ease,
+    border-color var(--t-fast) ease,
+    color var(--t-fast) ease;
+  cursor: pointer;
+}
+.back-btn:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 #000;
+  border-color: var(--accent-1);
+  color: var(--text-0);
+}
+.back-btn:active {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0 #000;
+}
+
+/* ── Panel Title ─────────────────────────────── */
+.panel-title {
+  font-family: var(--font-display);
+  font-size: clamp(15px, 2.2vw, 22px);
+  letter-spacing: 4px;
+  color: var(--text-0);
+  text-shadow: var(--pixel-shadow);
+  animation: chromaShift 10s ease-in-out infinite;
+}
+
+/* ── Panel Body (scrollable content) ────────── */
+.panel-body {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: var(--sp-7) clamp(var(--sp-5), 5vw, var(--sp-8)) 120px;
+  scroll-behavior: smooth;
+  font-size: var(--fs-md);
+}
+
+/* ── Section Lead / Intro Text ───────────────── */
+.section-lead {
+  max-width: 760px;
+  color: var(--text-1);
+  font-size: var(--fs-md);
+  line-height: 1.85;
+  margin-bottom: var(--sp-6);
+  border-left: 3px solid var(--accent-1);
+  padding-left: var(--sp-4);
+}
+.section-lead b, .section-lead strong {
+  color: var(--accent-1);
+}
+
+/* ── Section Heading ─────────────────────────── */
+.section-title {
+  font-family: var(--font-display);
+  font-size: var(--fs-sm);
+  letter-spacing: 4px;
+  color: var(--accent-2);
+  text-shadow: var(--pixel-shadow-sm);
+  margin: var(--sp-7) 0 var(--sp-4);
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+}
+.section-title::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, var(--border), transparent);
+  max-width: 300px;
+}
+
+/* ── Breadcrumb strip ────────────────────────── */
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  font-family: var(--font-display);
+  font-size: 9px;
+  letter-spacing: 2px;
+  color: var(--text-2);
+  margin-bottom: var(--sp-5);
+}
+.breadcrumb span { color: var(--accent-1); }
+
+/* ── Boot Screen ─────────────────────────────── */
+#bootScreen {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-boot);
+  background: var(--bg-0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.7s ease, visibility 0.7s;
+}
+#bootScreen.hide {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.boot-inner {
+  text-align: center;
+  max-width: 560px;
+  width: 90%;
+  background: rgba(5, 5, 7, 0.95);
+  border: 2px solid var(--border-dim);
+  padding: var(--sp-6) var(--sp-5);
+  box-shadow: 0 0 25px rgba(57, 255, 106, 0.05), inset 0 0 20px rgba(0, 0, 0, 0.8);
+  position: relative;
+}
+
+/* Subtle corner decoration on boot panel */
+.boot-inner::before,
+.boot-inner::after {
+  content: "";
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border-color: var(--accent-1);
+  border-style: solid;
+}
+.boot-inner::before { top: -2px; left: -2px; border-width: 2px 0 0 2px; }
+.boot-inner::after  { bottom: -2px; right: -2px; border-width: 0 2px 2px 0; }
+
+.boot-logo {
+  font-family: var(--font-display);
+  font-size: clamp(22px, 5vw, 38px);
+  font-weight: 900;
+  letter-spacing: 5px;
+  color: #fff;
+  text-shadow: 0 0 10px var(--accent-1-glow), 3px 3px 0 #000;
+  animation: bootFlicker 3s ease-in-out infinite;
+  line-height: 1.2;
+  margin-bottom: var(--sp-2);
+}
+
+.boot-subtitle {
+  font-family: var(--font-ui);
+  font-size: 13px;
+  letter-spacing: 2px;
+  color: var(--accent-1-dim);
+  margin-bottom: var(--sp-6);
+}
+
+.boot-loading-container {
+  background: rgba(0, 0, 0, 0.6);
+  border: 1px solid var(--border-dim);
+  padding: var(--sp-4);
+  margin-bottom: var(--sp-5);
+  text-align: left;
+}
+
+.boot-msg-box {
+  font-family: var(--font-mono);
+  font-size: 16px;
+  color: var(--accent-1);
+  letter-spacing: 1.5px;
+  margin-bottom: var(--sp-3);
+  display: flex;
+  align-items: center;
+}
+
+.boot-msg-prefix {
+  color: var(--accent-2);
+  font-weight: bold;
+}
+
+.blink-cursor {
+  animation: blink 0.9s infinite;
+  color: var(--accent-1);
+  margin-left: 2px;
+}
+
+/* Custom retro block loading bar */
+.boot-custom-bar-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-size: 16px;
+  color: var(--accent-1);
+  margin-bottom: var(--sp-4);
+  gap: 8px;
+}
+
+.bar-bracket {
+  color: var(--accent-2);
+  text-shadow: 0 0 4px var(--accent-2-glow);
+}
+
+.boot-bar-blocks {
+  color: var(--accent-1);
+  text-shadow: 0 0 8px var(--accent-1-glow);
+  letter-spacing: 2px;
+  margin: 0;
+  min-width: 260px;
+  text-align: left;
+}
+
+.boot-pct {
+  font-family: var(--font-display);
+  font-size: 13px;
+  color: var(--accent-1);
+  text-shadow: 0 0 5px var(--accent-1-glow);
+  min-width: 55px;
+  text-align: right;
+}
+
+/* Terminal logs styles */
+.boot-terminal-logs {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--text-2);
+  border-top: 1px dashed rgba(57, 255, 106, 0.15);
+  padding: var(--sp-3) var(--sp-2) 0;
+  min-height: 125px;
+  max-height: 125px;
+  overflow-y: hidden;
+  line-height: 1.6;
+  box-sizing: border-box;
+}
+
+.log-item {
+  color: var(--text-2);
+  margin-bottom: 2px;
+  opacity: 0.85;
+}
+
+.log-item::before {
+  content: "» ";
+  color: var(--accent-1);
+}
+
+/* Press start prompt container */
+.boot-press-container {
+  min-height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.boot-press {
+  font-family: var(--font-display);
+  font-size: 13px;
+  letter-spacing: 2px;
+  color: var(--accent-2);
+  text-shadow: 0 0 8px var(--accent-2-glow);
+  opacity: 0;
+  cursor: pointer;
+  transition: opacity 0.3s ease, transform 0.2s ease;
+  animation: blink 1.2s infinite;
+  pointer-events: none;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.boot-press:hover {
+  transform: scale(1.03);
+  color: #fff;
+  text-shadow: 0 0 12px var(--accent-2-glow);
+}
+
+.boot-press.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* ── XP HUD ──────────────────────────────────── */
+#xpHud {
+  position: fixed;
+  bottom: var(--sp-4);
+  left: var(--sp-4);
+  z-index: var(--z-hud);
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  background: var(--bg-1);
+  border: 2px solid var(--border);
+  box-shadow: var(--pixel-shadow);
+  padding: 8px 14px;
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+#xpHud.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+body:has(.panel.open) #xpHud {
+  opacity: 0 !important;
+  pointer-events: none !important;
+  transform: translateY(14px) !important;
+}
+.xp-level {
+  font-family: var(--font-ui);
+  font-size: 15px;
+  letter-spacing: 1px;
+  color: var(--accent-2);
+  border: 2px solid var(--accent-2-dim);
+  padding: 3px 8px;
+  white-space: nowrap;
+}
+.xp-track {
+  width: 120px;
+  height: 6px;
+  background: #000;
+  border: 2px solid var(--border);
+  overflow: hidden;
+}
+.xp-fill {
+  height: 100%;
+  width: 0%;
+  background: repeating-linear-gradient(
+    90deg,
+    var(--accent-1) 0,
+    var(--accent-1) 8px,
+    rgba(57,255,106,0.15) 8px,
+    rgba(57,255,106,0.15) 10px
+  );
+  transition: width 0.6s ease;
+}
+.xp-label {
+  font-family: var(--font-ui);
+  font-size: 15px;
+  letter-spacing: 1px;
+  color: var(--text-1);
+  white-space: nowrap;
+}
+
+/* ── Achievement Toast ───────────────────────── */
+#achToast {
+  position: fixed;
+  top: 80px;
+  left: 50%;
+  z-index: var(--z-toast);
+  display: flex;
+  align-items: center;
+  gap: var(--sp-4);
+  background: linear-gradient(120deg, rgba(5,5,18,0.97), rgba(18,8,32,0.97));
+  border: 2px solid var(--accent-1);
+  box-shadow: var(--pixel-shadow), 0 0 30px rgba(57,255,106,0.3);
+  padding: var(--sp-4) var(--sp-5);
+  transform: translate(-50%, -30px);
+  opacity: 0;
+  pointer-events: none;
+  transition:
+    transform 0.5s var(--ease-out-expo),
+    opacity 0.4s ease;
+  max-width: 90vw;
+}
+#achToast.show {
+  transform: translate(-50%, 0);
+  opacity: 1;
+}
+.ach-icon {
+  font-size: 22px;
+  color: var(--accent-2);
+  text-shadow: 0 0 6px var(--accent-2-glow);
+}
+.ach-label {
+  font-family: var(--font-ui);
+  font-size: 15px;
+  letter-spacing: 3px;
+  color: var(--accent-2);
+  margin-bottom: 4px;
+}
+.ach-text {
+  font-family: var(--font-ui);
+  font-size: 17px;
+  letter-spacing: 1px;
+  color: var(--text-0);
+  white-space: nowrap;
+}

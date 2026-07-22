@@ -1,0 +1,167 @@
+/* ═══════════════════════════════════════════════
+   RESPONSIVE.CSS — Mobile & Tablet Breakpoints
+   ═══════════════════════════════════════════════ */
+
+/* ── Tablet ───────────────────────────────────── */
+@media (max-width: 900px) {
+  /* About: stack portrait above text */
+  .about-hud-layout {
+    grid-template-columns: 1fr;
+    gap: var(--sp-5);
+  }
+  .about-left-panel {
+    max-width: 320px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .hud-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Engine choice: stack */
+  .engine-grid {
+    grid-template-columns: 1fr;
+    max-width: 500px;
+  }
+
+  /* Project media: stack */
+  .project-media-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Contact: stack */
+  .contact-wrap {
+    grid-template-columns: 1fr;
+    gap: var(--sp-6);
+  }
+}
+
+/* ── Mobile (≤ 640px) ─────────────────────────── */
+@media (max-width: 640px) {
+  /* Hub sizing */
+  :root {
+    --hub-size: 92vw;
+  }
+
+  /* Node buttons */
+  .node-btn {
+    width: 86px;
+    height: 86px;
+    margin: -43px;
+  }
+  .node-icon { font-size: 20px; }
+  .node-label { font-size: 13px; }
+
+  /* Panel top bar */
+  .panel-top {
+    padding: var(--sp-3) var(--sp-4);
+    gap: var(--sp-3);
+  }
+  .panel-top::before { display: none; }
+  .panel-top-right { padding-right: 0; }
+  .panel-title { font-size: 17px; letter-spacing: 2px; }
+
+  /* Panel body */
+  .panel-body {
+    padding: var(--sp-5) var(--sp-4) 100px;
+  }
+
+  /* Card grid */
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Feature/mechanics grid */
+  .feature-grid,
+  .mechanics-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Stats row */
+  .stats-row {
+    gap: var(--sp-3);
+  }
+  .stat-item { min-width: 70px; }
+
+  /* Detail grid & About Info Grid */
+  .detail-grid,
+  .hud-info-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-actions-footer {
+    justify-content: center;
+    width: 100%;
+  }
+  .hud-action-btn {
+    flex: 1 1 calc(50% - var(--sp-2));
+    justify-content: center;
+    text-align: center;
+  }
+
+  /* Project hero */
+  .project-hero {
+    aspect-ratio: 16/9;
+  }
+
+  /* Project nav */
+  .project-nav {
+    flex-direction: column;
+  }
+
+  /* Download btn */
+  .download-btn {
+    padding: 12px var(--sp-5);
+    font-size: 14px;
+  }
+
+  /* Resume header card */
+  .resume-header-card {
+    padding: var(--sp-5);
+  }
+
+  /* Boot */
+  .boot-logo {
+    font-size: clamp(18px, 7vw, 28px);
+    letter-spacing: 3px;
+  }
+
+  /* XP HUD */
+  .xp-label { display: none; }
+  .xp-track { width: 80px; }
+  #xpHud { padding: 7px 10px; }
+
+  /* Brand */
+  .brand { font-size: 14px; left: var(--sp-4); }
+  .tagline { font-size: 12px; left: var(--sp-4); }
+  .sound-toggle { right: var(--sp-4); }
+
+  /* Gallery */
+  .gallery-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  /* Hint text */
+  .hub-hint { font-size: 13px; letter-spacing: 2px; }
+
+  /* Achievement toast */
+  #achToast { padding: var(--sp-3) var(--sp-4); }
+  .ach-text { font-size: 14px; }
+}
+
+/* ── Very small phones (≤ 380px) ─────────────── */
+@media (max-width: 380px) {
+  :root { --hub-size: 96vw; }
+  .node-btn { width: 74px; height: 74px; margin: -37px; }
+  .node-label { font-size: 11px; }
+  .gallery-grid { grid-template-columns: 1fr; }
+  .detail-grid { grid-template-columns: 1fr; }
+}
+
+/* ── Landscape mobile ─────────────────────────── */
+@media (max-height: 500px) and (orientation: landscape) {
+  :root { --hub-size: 72vh; }
+  .hub-hint { display: none; }
+  #xpHud { display: none; }
+}

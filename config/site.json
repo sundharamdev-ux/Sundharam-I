@@ -1,0 +1,121 @@
+{
+  "_comment": "Edit this file to update site branding, navigation, social links, and boot sequence.",
+  "site": {
+    "title": "SUNDHARAM // Gameplay Programmer Portfolio",
+    "description": "Gameplay programmer portfolio — Unreal Engine 5 and Unity prototypes, puzzle systems, AI, and combat mechanics.",
+    "author": "Sundharam",
+    "ogImage": "assets/images/og-preview.png"
+  },
+  "branding": {
+    "name": "SUNDHARAM",
+    "nameSuffix": ".DEV",
+    "tagline": "GAMEPLAY PROGRAMMER // UE5 + UNITY",
+    "avatarInitials": "SR",
+    "avatarImage": ""
+  },
+  "boot": {
+    "logoText": "SUNDHARAM",
+    "logoSuffix": ".DEV",
+    "subtitle": "GAMEPLAY PROGRAMMER PORTFOLIO",
+    "pressStart": "PRESS START",
+    "loadingMessages": [
+      "INITIALIZING SYSTEMS...",
+      "LOADING SHADERS...",
+      "SPAWNING PARTICLES...",
+      "COMPILING BLUEPRINTS...",
+      "MOUNTING GAME WORLDS...",
+      "SYSTEM READY"
+    ]
+  },
+  "nav": [
+    {
+      "label": "PROJECTS",
+      "icon": "◧",
+      "target": "panel-projects",
+      "achievement": "Browsed Projects"
+    },
+    {
+      "label": "GAMES",
+      "icon": "▶",
+      "target": "panel-games",
+      "achievement": "Entered the Arcade"
+    },
+    {
+      "label": "SKILLS",
+      "icon": "◆",
+      "target": "panel-skills",
+      "achievement": "Skill Tree Unlocked"
+    },
+    {
+      "label": "ABOUT",
+      "icon": "☉",
+      "target": "panel-about",
+      "achievement": "Player Profile Viewed"
+    },
+    {
+      "label": "RESUME",
+      "icon": "⤓",
+      "target": "panel-resume",
+      "achievement": "Resume Downloaded"
+    },
+    {
+      "label": "CONTACT",
+      "icon": "✉",
+      "target": "panel-contact",
+      "achievement": "Communication Channel Open"
+    }
+  ],
+  "social": [
+    {
+      "label": "GitHub",
+      "icon": "⌗",
+      "url": "https://github.com/",
+      "color": "accent-1"
+    },
+    {
+      "label": "LinkedIn",
+      "icon": "in",
+      "url": "https://www.linkedin.com/in/sundharam-i",
+      "color": "accent-2"
+    },
+    {
+      "label": "Itch.io",
+      "icon": "▣",
+      "url": "https://itch.io/",
+      "color": "accent-1"
+    },
+    {
+      "label": "Email",
+      "icon": "✉",
+      "url": "mailto:sundharam.dev@gmail.com",
+      "color": "accent-2"
+    },
+    {
+      "label": "Discord",
+      "icon": "◈",
+      "url": "https://discord.com/",
+      "color": "accent-3"
+    }
+  ],
+  "contact": {
+    "email": "sundharam.dev@gmail.com",
+    "location": "Chennai, India",
+    "availability": "Open to opportunities",
+    "formspreeEndpoint": "",
+    "_comment_formspree": "Sign up at formspree.io and paste your endpoint here to enable email sending"
+  },
+  "audio": {
+    "bgmSrc": "",
+    "_comment_bgm": "Drop an .mp3 into assets/ and set path here, e.g. 'assets/music.mp3'"
+  },
+  "effects": {
+    "enableCursorGlow": true,
+    "enableScanlines": true,
+    "enableChromatic": true,
+    "enableVhsFlicker": true,
+    "enableGlitchTransitions": true,
+    "enableParticles": true,
+    "particleCount": 100,
+    "enableKonamiCode": true
+  }
+}
