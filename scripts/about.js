@@ -192,3 +192,5 @@ const About = (function () {
 
   return { init };
 })();
+window.About = About;
+

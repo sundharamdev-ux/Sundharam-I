@@ -1,8 +1,17 @@
-/**
- * main.js
- * Entry point — loads all configs in parallel, then initializes all modules in order.
- * This is the ONLY file that coordinates the other modules.
- */
+import './config-loader.js';
+import './audio.js';
+import './xp.js';
+import './nav.js';
+import './background.js';
+import './boot.js';
+import './hub.js';
+import './projects.js';
+import './skills.js';
+import './about.js';
+import './resume.js';
+import './contact.js';
+import './effects.js';
+
 (async function () {
   // 1. Load all JSON configs in parallel
   const configs = await ConfigLoader.loadAll();

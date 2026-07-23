@@ -93,3 +93,5 @@ const Resume = (function () {
 
   return { init };
 })();
+window.Resume = Resume;
+

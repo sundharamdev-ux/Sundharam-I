@@ -369,3 +369,5 @@ const Projects = (function () {
 
   return { init, openProjectDetail };
 })();
+window.Projects = Projects;
+

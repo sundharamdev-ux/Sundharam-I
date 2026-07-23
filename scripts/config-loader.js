@@ -43,3 +43,5 @@ const ConfigLoader = (function () {
 
   return { loadAll, get };
 })();
+window.ConfigLoader = ConfigLoader;
+

@@ -102,3 +102,5 @@ const Boot = (function () {
 
   return { init };
 })();
+window.Boot = Boot;
+

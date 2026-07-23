@@ -188,3 +188,5 @@ const Background = (function () {
 
   return { init, destroy };
 })();
+window.Background = Background;
+

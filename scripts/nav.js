@@ -109,3 +109,5 @@ const Nav = (function () {
 
   return { init, openPanel, closePanel, replacePanel, pushPanel, popToId, goHome, currentPanel };
 })();
+window.Nav = Nav;
+

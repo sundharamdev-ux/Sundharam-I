@@ -86,3 +86,5 @@ const Effects = (function () {
 
   return { init };
 })();
+window.Effects = Effects;
+

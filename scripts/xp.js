@@ -63,3 +63,5 @@ const XP = (function () {
 
   return { init, trackExplore, showAchievement, showHUD };
 })();
+window.XP = XP;
+

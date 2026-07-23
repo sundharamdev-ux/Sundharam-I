@@ -248,3 +248,5 @@ const Hub = (function () {
 
   return { init, destroy };
 })();
+window.Hub = Hub;
+

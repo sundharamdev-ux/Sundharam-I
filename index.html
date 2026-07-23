@@ -13,6 +13,7 @@
     content="Gameplay programmer portfolio — Unreal Engine 5 and Unity prototypes, puzzle systems, AI, and combat mechanics.">
   <meta property="og:type" content="website">
   <meta name="theme-color" content="#050507">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎮</text></svg>">
 
   <!-- Google Fonts: Pixel display + retro mono -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -518,22 +519,9 @@
   <audio id="bgm" loop preload="none" aria-hidden="true"></audio>
 
   <!-- ════════════════════════════════════════════
-     SCRIPTS — load order matters
+     SCRIPTS — bundled entry point
      ════════════════════════════════════════════ -->
-  <script src="scripts/config-loader.js"></script>
-  <script src="scripts/audio.js"></script>
-  <script src="scripts/xp.js"></script>
-  <script src="scripts/nav.js"></script>
-  <script src="scripts/background.js"></script>
-  <script src="scripts/boot.js"></script>
-  <script src="scripts/hub.js"></script>
-  <script src="scripts/projects.js"></script>
-  <script src="scripts/skills.js"></script>
-  <script src="scripts/about.js"></script>
-  <script src="scripts/resume.js"></script>
-  <script src="scripts/contact.js"></script>
-  <script src="scripts/effects.js"></script>
-  <script src="scripts/main.js"></script>
+  <script type="module" src="scripts/main.js"></script>
 
 </body>
 

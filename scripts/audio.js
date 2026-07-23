@@ -92,3 +92,5 @@ const Audio = (function () {
 
   return { init, playHover, playClick, playOpen, playAchievement, setEnabled };
 })();
+window.Audio = Audio;
+

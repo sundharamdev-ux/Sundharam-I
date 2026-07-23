@@ -1,0 +1,15 @@
+{
+  "name": "sundharam-portfolio",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Gameplay Programmer Portfolio — Unreal Engine 5 & Unity",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^5.4.14"
+  }
+}

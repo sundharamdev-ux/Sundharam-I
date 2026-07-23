@@ -115,3 +115,5 @@ const Contact = (function () {
 
   return { init };
 })();
+window.Contact = Contact;
+

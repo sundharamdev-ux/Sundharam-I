@@ -77,3 +77,5 @@ const Skills = (function () {
 
   return { init };
 })();
+window.Skills = Skills;
+
