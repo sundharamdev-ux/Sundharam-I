@@ -184,9 +184,9 @@
 
 .intro-text {
   font-family: var(--font-mono);
-  font-size: 16px;
+  font-size: 17.5px;
   line-height: 1.85;
-  color: var(--text-1);
+  color: #ffffff;
   margin: 0;
   font-style: italic;
 }

@@ -15,9 +15,15 @@
       ],
       "year": "2024",
       "status": "Prototype",
-      "thumbnail": "",
+      "thumbnail": "assets/images/thumbnail/chrono_isles.png",
       "video": "https://youtu.be/ELmbrn2mAPY?si=RlDVT_0a4v1mhz1W",
-      "screenshots": [],
+      "screenshots": [
+        "assets/images/Chrono Isles/stam1.png",
+        "assets/images/Chrono Isles/stam2.png",
+        "assets/images/Chrono Isles/stam3.png",
+        "assets/images/Chrono Isles/stamp4.png",
+        "assets/images/Chrono Isles/stam5.png"
+      ],
       "github": "",
       "download": "",
       "livedemo": "",
@@ -103,10 +109,17 @@
       ],
       "year": "2024",
       "status": "Prototype",
-      "thumbnail": "",
-      "video": "",
-      "screenshots": [],
-      "itch": "https://itch.io/",
+      "thumbnail": "assets/images/thumbnail/haunted_village.png",
+      "video": "https://youtu.be/H3Xpo5Tg67I?si=dXTQ-en4lEJfzjDm",
+      "screenshots": [
+        "assets/images/Haunted Village/gho1.png",
+        "assets/images/Haunted Village/gho2.png",
+        "assets/images/Haunted Village/gho3.png",
+        "assets/images/Haunted Village/gho4.png",
+        "assets/images/Haunted Village/gho5.png",
+        "assets/images/Haunted Village/gjo6.png"
+      ],
+      "itch": "",
       "github": "",
       "download": "",
       "livedemo": "",
@@ -147,10 +160,15 @@
       ],
       "year": "2024",
       "status": "Prototype",
-      "thumbnail": "",
-      "video": "",
-      "screenshots": [],
-      "itch": "https://itch.io/",
+      "thumbnail": "assets/images/thumbnail/dual_worlds.png",
+      "video": "https://youtu.be/n58KC0vOrD4?si=eAij_TcUz8ayu3fV",
+      "screenshots": [
+        "assets/images/Dual Worlds/puzz1.png",
+        "assets/images/Dual Worlds/puzz2.png",
+        "assets/images/Dual Worlds/puzz3.png",
+        "assets/images/Dual Worlds/puzz4.png"
+      ],
+      "itch": "",
       "github": "",
       "download": "",
       "livedemo": "",
@@ -194,7 +212,7 @@
       "thumbnail": "",
       "video": "",
       "screenshots": [],
-      "itch": "https://itch.io/",
+      "itch": "",
       "github": "",
       "download": "",
       "livedemo": "",
@@ -232,10 +250,17 @@
       ],
       "year": "2023",
       "status": "Prototype",
-      "thumbnail": "",
-      "video": "",
-      "screenshots": [],
-      "itch": "https://itch.io/",
+      "thumbnail": "assets/images/thumbnail/village_platformer.png",
+      "video": "https://youtu.be/wBMKCmbcKWs?si=URwMjKIlWL7gmxsk",
+      "screenshots": [
+        "assets/images/Village Platformer/vell1.png",
+        "assets/images/Village Platformer/vell2.png",
+        "assets/images/Village Platformer/vell3.png",
+        "assets/images/Village Platformer/vell4.png",
+        "assets/images/Village Platformer/vell5.png",
+        "assets/images/Village Platformer/vell6.png"
+      ],
+      "itch": "",
       "github": "",
       "download": "",
       "livedemo": "",
@@ -273,10 +298,14 @@
       ],
       "year": "2023",
       "status": "Prototype",
-      "thumbnail": "",
-      "video": "",
-      "screenshots": [],
-      "itch": "https://itch.io/",
+      "thumbnail": "assets/images/thumbnail/tank_battle.png",
+      "video": "https://youtu.be/rSHZAdLilZ8?si=c6RpVBjyVQ92KShx",
+      "screenshots": [
+        "assets/images/Tank Battle Prototype/tank.png",
+        "assets/images/Tank Battle Prototype/tank1.png",
+        "assets/images/Tank Battle Prototype/tank2.png"
+      ],
+      "itch": "",
       "github": "",
       "download": "",
       "livedemo": "",
@@ -313,11 +342,17 @@
         "Android"
       ],
       "year": "2024",
-      "status": "Prototype",
-      "thumbnail": "",
+      "status": "Released",
+      "thumbnail": "assets/images/thumbnail/one_more_death.png",
       "video": "https://youtu.be/MigaB-ftm9U?si=eCGYbL6NVgFhzzfO",
-      "screenshots": [],
-      "itch": "https://itch.io/",
+      "screenshots": [
+        "assets/images/one more death/one1.png",
+        "assets/images/one more death/one2.png",
+        "assets/images/one more death/one3.png",
+        "assets/images/one more death/one4.png",
+        "assets/images/one more death/one5.png"
+      ],
+      "itch": "https://sundharam.itch.io/one-more-death",
       "github": "",
       "download": "",
       "livedemo": "",
@@ -345,6 +380,70 @@
       ]
     },
     {
+      "id": "bros-jump",
+      "title": "Bros's Jump",
+      "engine": "unity",
+      "engineLabel": "Unity",
+      "language": "C#",
+      "genre": "2D Puzzle Platformer",
+      "role": "Gameplay Programmer",
+      "platform": [
+        "PC",
+        "Windows",
+        "Android"
+      ],
+      "year": "2024",
+      "status": "Prototype",
+      "thumbnail": "assets/images/thumbnail/bros_jump.png",
+      "video": "https://youtu.be/esV8VkJGiEE?si=ZoNUevagSql-daBJ",
+      "screenshots": [
+        "assets/images/Bro's jump/bro1.png",
+        "assets/images/Bro's jump/bro2.png",
+        "assets/images/Bro's jump/bro3.png",
+        "assets/images/Bro's jump/bro4.png",
+        "assets/images/Bro's jump/bro5.png",
+        "assets/images/Bro's jump/bro6.png"
+      ],
+      "itch": "https://sundharam.itch.io/bros-jump",
+      "github": "",
+      "download": "",
+      "livedemo": "",
+      "devLog": {
+        "challenge": "Designing puzzles that require both characters' unique abilities while keeping gameplay balanced and engaging.",
+        "solution": "Created levels where players must combine the Double Jump and Wall Jump mechanics to solve environmental puzzles and reach the exit portal together.",
+        "impact": "Delivered fun cooperative puzzle gameplay with increasing difficulty, encouraging strategic thinking, teamwork, and replayability across multiple levels."
+      },
+      "description": "Bros's Jump is a 2D cooperative puzzle platformer where players control two unique characters, each with different movement abilities. One character can perform a Double Jump, while the other can Wall Jump. Players must work together to overcome obstacles, avoid traps, collect coins, and reach the exit portal to complete each level.",
+      "mechanics": [
+        "Two playable characters with unique abilities",
+        "Character 1 uses Double Jump to reach high platforms",
+        "Character 2 uses Wall Jump to climb vertical surfaces",
+        "Cooperative puzzle-solving using both characters",
+        "Collect coins hidden throughout each level",
+        "Avoid dangerous traps & freeze traps",
+        "Reach portal with both characters to exit",
+        "Level-based progression with increasing difficulty"
+      ],
+      "features": [
+        "2D Physics-based platforming",
+        "Character switching/control system",
+        "Double Jump & Wall Jump mechanics",
+        "Coin Collection System",
+        "Portal Exit System",
+        "Freeze Trap hazard",
+        "Level Progression",
+        "Mobile & Keyboard Controls"
+      ],
+      "technologies": [
+        "C#",
+        "Unity",
+        "2D Physics",
+        "New Input System",
+        "Tilemap",
+        "Character Switching Logic"
+      ]
+    },
+    {
       "id": "color-triangle",
       "title": "Color Triangle",
       "engine": "unity",
@@ -359,10 +458,14 @@
       ],
       "year": "2023",
       "status": "Released",
-      "thumbnail": "",
+      "thumbnail": "assets/images/thumbnail/color_triangle.png",
       "video": "https://youtu.be/tShKYsJg3r4?si=41yzc6xjdbTii_a5",
-      "screenshots": [],
-      "itch": "https://itch.io/",
+      "screenshots": [
+        "assets/images/color triangle/co1.png",
+        "assets/images/color triangle/co2.png",
+        "assets/images/color triangle/co3.png"
+      ],
+      "itch": "https://sundharam.itch.io/colour-triangle",
       "github": "",
       "download": "",
       "livedemo": "",
@@ -392,185 +495,6 @@
       ]
     },
     {
-      "id": "land-shark",
-      "title": "Land Shark",
-      "engine": "unity",
-      "engineLabel": "Unity",
-      "language": "C#",
-      "genre": "Action",
-      "role": "Gameplay Programmer",
-      "platform": [
-        "PC",
-        "Windows"
-      ],
-      "year": "2023",
-      "status": "Prototype",
-      "thumbnail": "",
-      "video": "",
-      "screenshots": [],
-      "itch": "https://itch.io/",
-      "github": "",
-      "download": "",
-      "livedemo": "",
-      "description": "Land Shark is a third-person action prototype developed in Unity. Players control a shark that swims through the ocean and hunts human swimmers using fast-paced, physics-based attack mechanics. The prototype focuses on creating responsive movement, intelligent target selection, and dynamic shark attack behavior.",
-      "mechanics": [
-        "Physics-based underwater navigation",
-        "Sine-wave breach jump",
-        "Nearest target detection & lock",
-        "Dynamic jump attack",
-        "Random AI movement"
-      ],
-      "features": [
-        "Predictive target locking",
-        "Ballistic breach trajectory",
-        "Dynamic water interaction"
-      ],
-      "technologies": [
-        "C#",
-        "Unity",
-        "Rigidbody Physics",
-        "NavMesh",
-        "Coroutines"
-      ]
-    },
-    {
-      "id": "car-color-path",
-      "title": "Car Color Path",
-      "engine": "unity",
-      "engineLabel": "Unity",
-      "language": "C#",
-      "genre": "Casual Arcade",
-      "role": "Gameplay Programmer",
-      "platform": [
-        "Android",
-        "Windows"
-      ],
-      "year": "2023",
-      "status": "Prototype",
-      "thumbnail": "",
-      "video": "",
-      "screenshots": [],
-      "itch": "https://itch.io/",
-      "github": "",
-      "download": "",
-      "livedemo": "",
-      "devLog": {
-        "challenge": "Creating a smooth one-touch control system where the car moves while the screen is held, stops instantly when released, and paints the road accurately without affecting gameplay.",
-        "solution": "Implemented a touch-and-hold movement system with real-time path painting, obstacle detection, car selection, and smoke particle effects to provide responsive controls and visual feedback.",
-        "impact": "Delivered smooth and intuitive gameplay with satisfying visual effects, improved player control, and a polished casual game experience suitable for mobile devices."
-      },
-      "description": "Car Color Path is a casual arcade prototype inspired by path-painting mechanics. The player controls a car that drives along a predefined track and paints the road while moving. The main objective is to complete the entire level by coloring the full path while avoiding moving obstacles. The game focuses on simple one-touch control, smooth movement, and satisfying visual feedback.",
-      "mechanics": [
-        "Touch-and-hold movement",
-        "Dynamic road painting",
-        "Obstacle avoidance",
-        "Coin collection",
-        "Smooth follow camera"
-      ],
-      "features": [
-        "Touch-responsive controls",
-        "Procedural paint rendering",
-        "Spline-based track system",
-        "Collision obstacle spawning",
-        "Completion percentage tracking"
-      ],
-      "technologies": [
-        "C#",
-        "Unity",
-        "Trail Renderer",
-        "Mobile Input",
-        "Android SDK"
-      ]
-    },
-    {
-      "id": "zombie-land",
-      "title": "Zombie Land",
-      "engine": "unity",
-      "engineLabel": "Unity",
-      "language": "C#",
-      "genre": "Survival Shooter",
-      "role": "Gameplay Programmer",
-      "platform": [
-        "PC",
-        "Windows"
-      ],
-      "year": "2023",
-      "status": "Prototype",
-      "thumbnail": "",
-      "video": "https://youtu.be/rBOE8Ds_KoA?si=4vnIJ_28LMCB-P6B",
-      "screenshots": [],
-      "itch": "https://itch.io/",
-      "github": "",
-      "download": "",
-      "livedemo": "",
-      "devLog": {
-        "challenge": "Creating an endless zombie survival system with smooth performance on both mobile and PC.",
-        "solution": "Built a wave-based spawning system, headshot/body-shot damage, and cross-platform controls using Unity's New Input System.",
-        "impact": "Delivered smooth FPS gameplay, scalable endless waves, and responsive controls across mobile and PC."
-      },
-      "description": "Zombie Land is a first-person survival shooter prototype where the player drops into a zombie-infested battlefield using a parachute and must survive against endless waves of enemies. Zombies spawn randomly around the map and continuously hunt the player, creating intense and fast-paced survival gameplay. The player is equipped with firearms and grenades to eliminate incoming zombies. The main objective is to survive as long as possible in an infinite wave system where difficulty gradually increases over time.",
-      "mechanics": [
-        "Gun shooting with touch/click input",
-        "Hit detection for body and headshots",
-        "Headshots deal higher damage than body shots",
-        "Grenade throwing for area damage"
-      ],
-      "features": [
-        "Wave-based spawning system",
-        "Escalating difficulty tuning",
-        "Grenade physics & area damage",
-        "Headshot detection"
-      ],
-      "technologies": [
-        "C#",
-        "Unity",
-        "NavMesh",
-        "First-Person Controller",
-        "Particle System"
-      ]
-    },
-    {
-      "id": "gyro-ball",
-      "title": "Gyro Ball Prototype",
-      "engine": "unity",
-      "engineLabel": "Unity",
-      "language": "C# / Android",
-      "genre": "Mobile Physics",
-      "role": "Gameplay Programmer",
-      "platform": [
-        "Android"
-      ],
-      "year": "2023",
-      "status": "Prototype",
-      "thumbnail": "",
-      "video": "https://youtu.be/rxlyo4iw41c?si=pc13Q0zIU2uHPR3a",
-      "screenshots": [],
-      "github": "",
-      "devLog": {
-        "challenge": "Creating smooth and responsive gyroscope controls while maintaining realistic physics-based ball movement across different maze environments.",
-        "solution": "Implemented Unity's gyroscope input with physics-driven Rigidbody movement, combined with optimized camera follow, collision handling, and mobile-friendly UI for an intuitive gameplay experience.",
-        "impact": "Delivered a natural and immersive motion-control experience with stable performance, responsive gameplay, and a scalable level system suitable for expanding into a complete mobile game."
-      },
-      "description": "Gyro Ball Prototype is a real-time motion-controlled experience designed for mobile devices. The player guides a ball through a 3D environment using only device tilt input. The objective is to maintain balance, control speed, and navigate through different surfaces and obstacles. The prototype focuses on testing intuitive gyro-based movement combined with Unity physics for realistic rolling behavior.",
-      "mechanics": [
-        "Gyroscope-based movement",
-        "Physics-driven rolling momentum",
-        "Device rotation is mapped to world-space force or torque applied to the ball",
-        "Uses Unity New Input System for gyro data handling.",
-        "Surface angle affects speed and direction."
-      ],
-      "features": [
-        "Native gyroscope input reading",
-        "Mobile performance optimization"
-      ],
-      "technologies": [
-        "C#",
-        "Unity",
-        "Android Gyroscope API",
-        "Rigidbody Physics"
-      ]
-    },
-    {
       "id": "candy-wire-gyro",
       "title": "Candy Wire Gyro",
       "engine": "unity",
@@ -584,9 +508,15 @@
       ],
       "year": "2024",
       "status": "Prototype",
-      "thumbnail": "",
+      "thumbnail": "assets/images/thumbnail/candy_wire_gyro.png",
       "video": "https://youtu.be/E1fR9oeYuDo?si=Bfsv5jdU4csR_KAY",
-      "screenshots": [],
+      "screenshots": [
+        "assets/images/candy/candy1.png",
+        "assets/images/candy/candy2.png",
+        "assets/images/candy/candy3.png",
+        "assets/images/candy/candy4.png",
+        "assets/images/candy/cand5.png"
+      ],
       "itch": "",
       "github": "",
       "download": "",
@@ -622,6 +552,195 @@
         "Particle System",
         "Unity UI",
         "Mobile Input"
+      ]
+    },
+    {
+      "id": "gyro-ball",
+      "title": "Gyro Ball Prototype",
+      "engine": "unity",
+      "engineLabel": "Unity",
+      "language": "C# / Android",
+      "genre": "Mobile Physics",
+      "role": "Gameplay Programmer",
+      "platform": [
+        "Android"
+      ],
+      "year": "2023",
+      "status": "Prototype",
+      "thumbnail": "assets/images/thumbnail/gyro_ball.png",
+      "video": "https://youtu.be/rxlyo4iw41c?si=pc13Q0zIU2uHPR3a",
+      "screenshots": [
+        "assets/images/gyro ball/gy1.png",
+        "assets/images/gyro ball/gy2.png",
+        "assets/images/gyro ball/gy3.png",
+        "assets/images/gyro ball/ggy4.png"
+      ],
+      "github": "",
+      "devLog": {
+        "challenge": "Creating smooth and responsive gyroscope controls while maintaining realistic physics-based ball movement across different maze environments.",
+        "solution": "Implemented Unity's gyroscope input with physics-driven Rigidbody movement, combined with optimized camera follow, collision handling, and mobile-friendly UI for an intuitive gameplay experience.",
+        "impact": "Delivered a natural and immersive motion-control experience with stable performance, responsive gameplay, and a scalable level system suitable for expanding into a complete mobile game."
+      },
+      "description": "Gyro Ball Prototype is a real-time motion-controlled experience designed for mobile devices. The player guides a ball through a 3D environment using only device tilt input. The objective is to maintain balance, control speed, and navigate through different surfaces and obstacles. The prototype focuses on testing intuitive gyro-based movement combined with Unity physics for realistic rolling behavior.",
+      "mechanics": [
+        "Gyroscope-based movement",
+        "Physics-driven rolling momentum",
+        "Device rotation is mapped to world-space force or torque applied to the ball",
+        "Uses Unity New Input System for gyro data handling.",
+        "Surface angle affects speed and direction."
+      ],
+      "features": [
+        "Native gyroscope input reading",
+        "Mobile performance optimization"
+      ],
+      "technologies": [
+        "C#",
+        "Unity",
+        "Android Gyroscope API",
+        "Rigidbody Physics"
+      ]
+    },
+    {
+      "id": "zombie-land",
+      "title": "Zombie Land",
+      "engine": "unity",
+      "engineLabel": "Unity",
+      "language": "C#",
+      "genre": "Survival Shooter",
+      "role": "Gameplay Programmer",
+      "platform": [
+        "PC",
+        "Windows"
+      ],
+      "year": "2023",
+      "status": "Prototype",
+      "thumbnail": "assets/images/thumbnail/zombie_land.png",
+      "video": "https://youtu.be/rBOE8Ds_KoA?si=4vnIJ_28LMCB-P6B",
+      "screenshots": [
+        "assets/images/zombie/zom1.png",
+        "assets/images/zombie/zom2.png",
+        "assets/images/zombie/zom3.png",
+        "assets/images/zombie/zom4.png"
+      ],
+      "itch": "",
+      "github": "",
+      "download": "",
+      "livedemo": "",
+      "devLog": {
+        "challenge": "Creating an endless zombie survival system with smooth performance on both mobile and PC.",
+        "solution": "Built a wave-based spawning system, headshot/body-shot damage, and cross-platform controls using Unity's New Input System.",
+        "impact": "Delivered smooth FPS gameplay, scalable endless waves, and responsive controls across mobile and PC."
+      },
+      "description": "Zombie Land is a first-person survival shooter prototype where the player drops into a zombie-infested battlefield using a parachute and must survive against endless waves of enemies. Zombies spawn randomly around the map and continuously hunt the player, creating intense and fast-paced survival gameplay. The player is equipped with firearms and grenades to eliminate incoming zombies. The main objective is to survive as long as possible in an infinite wave system where difficulty gradually increases over time.",
+      "mechanics": [
+        "Gun shooting with touch/click input",
+        "Hit detection for body and headshots",
+        "Headshots deal higher damage than body shots",
+        "Grenade throwing for area damage"
+      ],
+      "features": [
+        "Wave-based spawning system",
+        "Escalating difficulty tuning",
+        "Grenade physics & area damage",
+        "Headshot detection"
+      ],
+      "technologies": [
+        "C#",
+        "Unity",
+        "NavMesh",
+        "First-Person Controller",
+        "Particle System"
+      ]
+    },
+    {
+      "id": "car-color-path",
+      "title": "Car Color Path",
+      "engine": "unity",
+      "engineLabel": "Unity",
+      "language": "C#",
+      "genre": "Casual Arcade",
+      "role": "Gameplay Programmer",
+      "platform": [
+        "Android",
+        "Windows"
+      ],
+      "year": "2023",
+      "status": "Prototype",
+      "thumbnail": "",
+      "video": "",
+      "screenshots": [],
+      "itch": "",
+      "github": "",
+      "download": "",
+      "livedemo": "",
+      "devLog": {
+        "challenge": "Creating a smooth one-touch control system where the car moves while the screen is held, stops instantly when released, and paints the road accurately without affecting gameplay.",
+        "solution": "Implemented a touch-and-hold movement system with real-time path painting, obstacle detection, car selection, and smoke particle effects to provide responsive controls and visual feedback.",
+        "impact": "Delivered smooth and intuitive gameplay with satisfying visual effects, improved player control, and a polished casual game experience suitable for mobile devices."
+      },
+      "description": "Car Color Path is a casual arcade prototype inspired by path-painting mechanics. The player controls a car that drives along a predefined track and paints the road while moving. The main objective is to complete the entire level by coloring the full path while avoiding moving obstacles. The game focuses on simple one-touch control, smooth movement, and satisfying visual feedback.",
+      "mechanics": [
+        "Touch-and-hold movement",
+        "Dynamic road painting",
+        "Obstacle avoidance",
+        "Coin collection",
+        "Smooth follow camera"
+      ],
+      "features": [
+        "Touch-responsive controls",
+        "Procedural paint rendering",
+        "Spline-based track system",
+        "Collision obstacle spawning",
+        "Completion percentage tracking"
+      ],
+      "technologies": [
+        "C#",
+        "Unity",
+        "Trail Renderer",
+        "Mobile Input",
+        "Android SDK"
+      ]
+    },
+    {
+      "id": "land-shark",
+      "title": "Land Shark",
+      "engine": "unity",
+      "engineLabel": "Unity",
+      "language": "C#",
+      "genre": "Action",
+      "role": "Gameplay Programmer",
+      "platform": [
+        "PC",
+        "Windows"
+      ],
+      "year": "2023",
+      "status": "Prototype",
+      "thumbnail": "",
+      "video": "",
+      "screenshots": [],
+      "itch": "",
+      "github": "",
+      "download": "",
+      "livedemo": "",
+      "description": "Land Shark is a third-person action prototype developed in Unity. Players control a shark that swims through the ocean and hunts human swimmers using fast-paced, physics-based attack mechanics. The prototype focuses on creating responsive movement, intelligent target selection, and dynamic shark attack behavior.",
+      "mechanics": [
+        "Physics-based underwater navigation",
+        "Sine-wave breach jump",
+        "Nearest target detection & lock",
+        "Dynamic jump attack",
+        "Random AI movement"
+      ],
+      "features": [
+        "Predictive target locking",
+        "Ballistic breach trajectory",
+        "Dynamic water interaction"
+      ],
+      "technologies": [
+        "C#",
+        "Unity",
+        "Rigidbody Physics",
+        "NavMesh",
+        "Coroutines"
       ]
     }
   ]

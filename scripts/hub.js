@@ -76,7 +76,7 @@ const Hub = (function () {
       {
         id: 'node-contact',
         target: 'panel-contact',
-        label: 'COMMS TERMINAL',
+        label: 'CONNECT TERMINAL',
         visual: '🏙',
         themeClass: 'theme-cyan',
         items: ['Contact', 'GitHub', 'LinkedIn', 'Email'],

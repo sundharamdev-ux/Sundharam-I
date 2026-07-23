@@ -4,7 +4,10 @@
   "eyebrow": "GAMEPLAY PROGRAMMER",
   "name": "Sundharam",
   "role": "Gameplay Programmer",
-  "bio": "I build responsive gameplay systems and interactive mechanics using Unreal Engine 5, C++, and Blueprint. I focus on player feel, rapid prototyping, optimization, and creating satisfying gameplay experiences.",
+  "bio": [
+    "Gameplay Programmer specializing in Unity (C#) and Unreal Engine 5 (C++ & Blueprints), with a passion for creating engaging gameplay mechanics, player systems, AI, and UI for 2D and 3D games.",
+    "Experienced in developing game prototypes for PC, Mobile, and Web, with a focus on clean code, optimized performance, and enjoyable player experiences. Always eager to learn new technologies and build high-quality games."
+  ],
   "coreSkills": [
     "Unreal Engine 5",
     "C++",
@@ -26,10 +29,6 @@
     {
       "value": "3",
       "label": "PLATFORMS TARGETED"
-    },
-    {
-      "value": "2+",
-      "label": "YEARS EXPERIENCE"
     }
   ],
   "details": [
@@ -39,25 +38,62 @@
     },
     {
       "label": "FOCUS",
-      "value": ["Player Feel", "Gameplay Systems", "Optimization", "Rapid Prototyping"]
+      "value": [
+        "Player Feel",
+        "Gameplay Systems",
+        "Optimization",
+        "Rapid Prototyping"
+      ]
     },
     {
       "label": "ENGINES",
-      "value": ["Unreal Engine 5", "Unity"]
+      "value": [
+        "Unreal Engine 5",
+        "Unity"
+      ]
     },
     {
       "label": "LANGUAGES",
-      "value": ["C++", "C#", "Blueprint"]
+      "value": [
+        "C++",
+        "C#",
+        "Blueprint"
+      ]
     },
     {
       "label": "TOOLS",
-      "value": ["Git", "Rider", "Photoshop", "Figma"]
+      "value": [
+        "Git",
+        "Rider",
+        "Photoshop",
+        "Figma"
+      ]
     }
   ],
   "actions": [
-    { "label": "[ Resume ]", "type": "panel", "target": "panel-resume", "id": "btn-resume" },
-    { "label": "[ GitHub ]", "type": "link", "target": "https://github.com/", "id": "btn-github" },
-    { "label": "[ LinkedIn ]", "type": "link", "target": "https://www.linkedin.com/in/sundharam-i", "id": "btn-linkedin" },
-    { "label": "[ Contact ]", "type": "panel", "target": "panel-contact", "id": "btn-contact" }
+    {
+      "label": "[ Resume ]",
+      "type": "panel",
+      "target": "panel-resume",
+      "id": "btn-resume"
+    },
+    {
+      "label": "[ GitHub ]",
+      "type": "link",
+      "target": "https://github.com/",
+      "id": "btn-github"
+    },
+    {
+      "label": "[ LinkedIn ]",
+      "type": "link",
+      "target": "https://www.linkedin.com/in/sundharam-i",
+      "id": "btn-linkedin"
+    },
+    {
+      "label": "[ Contact ]",
+      "type": "panel",
+      "target": "panel-contact",
+      "id": "btn-contact"
+    }
   ]
 }

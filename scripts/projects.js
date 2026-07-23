@@ -12,9 +12,13 @@ const Projects = (function () {
   function cardArt(project) {
     const hasThumb = project.thumbnail?.trim().length > 0;
     const cls = 'card-art' + (hasThumb ? ' has-thumb' : '');
-    const style = hasThumb ? ` style="--thumb-url:url('${project.thumbnail}')"` : '';
+    const thumbHtml = hasThumb
+      ? `<img src="${project.thumbnail}" class="card-thumb-img" alt="${project.title} thumbnail" loading="lazy">
+         <div class="card-thumb-overlay"></div>`
+      : '';
     return `
-      <div class="${cls}"${style}>
+      <div class="${cls}">
+        ${thumbHtml}
         <div class="card-placeholder">
           <span class="big">▣</span>
           <span>THUMBNAIL</span>
@@ -101,12 +105,16 @@ const Projects = (function () {
     // (Click listener moved to init to avoid duplicate listeners)
   }
 
-  // ── Games Panel (quick cards for all projects) ─
+  // ── Games Panel (quick cards for playable games) ─
   function renderGamesPanel() {
     const grid = document.getElementById('gamesGrid');
+    if (!grid) return;
     grid.innerHTML = '';
 
-    _projects.forEach((project, i) => {
+    const playable = _projects.filter(p => p.itch && p.itch.trim().length > 0);
+
+    playable.forEach((project, i) => {
+      const globalIdx = _projects.indexOf(project);
       const card = document.createElement('div');
       card.className = 'card play-card';
       card.style.animationDelay = (i * 0.045) + 's';
@@ -119,14 +127,12 @@ const Projects = (function () {
             <span class="tag primary">${project.engineLabel}</span>
           </div>
           <div class="card-actions">
-            ${project.itch ? `<button class="btn-mini" data-itch="${project.itch}">▶ PLAY ON ITCH.IO</button>` : ''}
-            <button class="btn-mini magenta" data-open-project="${i}">◧ DETAILS</button>
+            <button class="btn-mini" data-itch="${project.itch}">▶ PLAY ON ITCH.IO</button>
+            <button class="btn-mini magenta" data-open-project="${globalIdx}">◧ DETAILS</button>
           </div>
         </div>`;
       grid.appendChild(card);
     });
-
-    // (Click listener moved to init to avoid duplicate listeners)
   }
 
   // ── Full Project Detail Page ──────────────────

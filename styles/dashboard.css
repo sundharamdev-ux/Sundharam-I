@@ -45,9 +45,9 @@
 
 .tagline-detail {
   font-family: var(--font-ui);
-  font-size: 9px;
+  font-size: 12px;
   letter-spacing: 1px;
-  color: var(--text-2);
+  color: var(--text-1);
   margin-top: 1px;
 }
 
@@ -55,19 +55,19 @@
   text-align: center;
   background: rgba(10, 10, 15, 0.85);
   border: 1px dashed var(--accent-1);
-  padding: 3px 18px;
+  padding: 4px 20px;
 }
 
 .detail-subtitle {
   font-family: var(--font-display);
-  font-size: 7.5px;
+  font-size: 10px;
   letter-spacing: 2px;
   color: var(--accent-1);
 }
 
 .detail-title {
   font-family: var(--font-display);
-  font-size: 11px;
+  font-size: 14px;
   letter-spacing: 1.5px;
   color: var(--accent-2);
   text-shadow: 0 0 6px var(--accent-2-glow);
@@ -125,10 +125,10 @@
 .detail-title-card {
   background: rgba(10, 10, 15, 0.95);
   border: 1.5px solid var(--border);
-  padding: 10px 14px;
+  padding: 12px 16px;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 10px;
   box-shadow: var(--pixel-shadow-sm);
 }
 
@@ -146,7 +146,7 @@
 
 .detail-label-prefix {
   font-family: var(--font-display);
-  font-size: 10px;
+  font-size: 13px;
   letter-spacing: 1.5px;
   color: var(--accent-1);
   text-shadow: 0 0 4px var(--accent-1-glow);
@@ -154,7 +154,7 @@
 
 #detailProjectTitle {
   font-family: var(--font-display);
-  font-size: clamp(14px, 2vw, 19px);
+  font-size: clamp(18px, 2.2vw, 24px);
   letter-spacing: 2px;
   color: #fff;
   text-shadow: 2px 2px 0 #000;
@@ -163,29 +163,31 @@
 
 .status-tag-orange {
   font-family: var(--font-ui);
-  font-size: 9px;
+  font-size: 13px;
+  font-weight: 600;
   letter-spacing: 1px;
   color: #ff8c00;
   border: 1.5px solid #ff8c00;
   background: rgba(255, 140, 0, 0.12);
-  padding: 2px 8px;
+  padding: 4px 10px;
   box-shadow: 0 0 8px rgba(255, 140, 0, 0.2);
 }
 
 .title-badges-row {
   display: flex;
   flex-wrap: wrap;
-  gap: 6px;
+  gap: 8px;
 }
 
 .detail-badge-item {
   font-family: var(--font-ui);
-  font-size: 9px;
+  font-size: 13px;
+  font-weight: 500;
   letter-spacing: 1px;
-  padding: 3px 8px;
+  padding: 4px 10px;
   background: rgba(0, 0, 0, 0.6);
-  border: 1px solid var(--border);
-  color: var(--text-1);
+  border: 1.5px solid var(--border);
+  color: var(--text-0);
 }
 
 .detail-badge-item.ue5 {
@@ -228,19 +230,19 @@
 .detail-screenshots-card {
   background: rgba(10, 10, 15, 0.9);
   border: 1.5px solid var(--border-dim);
-  padding: 10px;
+  padding: 12px;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 10px;
 }
 
 .card-header-tag {
   font-family: var(--font-display);
-  font-size: 9px;
+  font-size: 14px;
   letter-spacing: 1.5px;
   color: var(--accent-1);
-  border-bottom: 1px dashed rgba(57, 255, 106, 0.2);
-  padding-bottom: 4px;
+  border-bottom: 1px dashed rgba(57, 255, 106, 0.3);
+  padding-bottom: 6px;
 }
 
 .screenshot-carousel-wrap {
@@ -254,8 +256,8 @@
   border: 1px solid var(--border);
   color: var(--accent-1);
   font-family: var(--font-display);
-  font-size: 10px;
-  padding: 8px 10px;
+  font-size: 12px;
+  padding: 10px 14px;
   cursor: pointer;
   transition: all var(--t-fast) ease;
 }
@@ -293,17 +295,17 @@
 .detail-card-panel {
   background: rgba(10, 10, 15, 0.95);
   border: 1.5px solid var(--border-dim);
-  padding: 12px 14px;
+  padding: 14px 16px;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 10px;
 }
 
 .desc-paragraph {
   font-family: var(--font-ui);
-  font-size: 11.5px;
-  line-height: 1.55;
-  color: var(--text-1);
+  font-size: 16px;
+  line-height: 1.65;
+  color: #ffffff;
   margin: 0;
 }
 
@@ -317,10 +319,10 @@
 .mechanic-box {
   background: rgba(0, 0, 0, 0.4);
   border: 1.5px solid var(--border-dim);
-  padding: 10px;
+  padding: 12px;
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 6px;
   position: relative;
   transition: all var(--t-fast) ease;
 }
@@ -332,29 +334,31 @@
 }
 
 .mechanic-icon {
-  font-size: 16px;
+  font-size: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 30px;
-  height: 30px;
-  border: 1px solid var(--border-dim);
+  width: 36px;
+  height: 36px;
+  border: 1.5px solid var(--border-dim);
   background: rgba(15, 15, 20, 0.8);
-  margin-bottom: 2px;
+  margin-bottom: 4px;
 }
 
 .mechanic-title {
-  font-family: var(--font-display);
-  font-size: 8.5px;
+  font-family: var(--font-ui);
+  font-size: 14px;
+  font-weight: 700;
   letter-spacing: 1px;
   color: var(--accent-1);
+  text-transform: uppercase;
 }
 
 .mechanic-desc {
   font-family: var(--font-ui);
-  font-size: 10px;
-  line-height: 1.35;
-  color: var(--text-2);
+  font-size: 14.5px;
+  line-height: 1.45;
+  color: #e4fce9;
   margin: 0;
 }
 
@@ -367,18 +371,19 @@
 
 .tech-badge-item {
   font-family: var(--font-ui);
-  font-size: 9.5px;
-  padding: 4px 10px;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 6px 14px;
   border: 1.5px solid var(--border);
-  color: var(--text-0);
+  color: #ffffff;
   background: rgba(0, 0, 0, 0.6);
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: 8px;
 }
 
 .tech-badge-item .tech-icon {
-  font-size: 10px;
+  font-size: 12px;
   color: var(--accent-1);
 }
 
@@ -386,41 +391,43 @@
 .detail-devnotes-card {
   background: rgba(10, 10, 15, 0.95);
   border: 1.5px solid var(--border-dim);
-  padding: 14px 18px;
+  padding: 16px 20px;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 12px;
 }
 
 .devnotes-3col-grid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  gap: 18px;
+  gap: 20px;
 }
 
 .devnote-col {
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 8px;
   border-left: 2px solid var(--border-dim);
-  padding-left: 12px;
+  padding-left: 14px;
 }
 
 .devnote-title {
-  font-family: var(--font-display);
-  font-size: 8.5px;
+  font-family: var(--font-ui);
+  font-size: 14px;
+  font-weight: 700;
   letter-spacing: 1.5px;
+  text-transform: uppercase;
 }
 
-.devnote-title.orange { color: #ff8c00; }
+.devnote-title.orange { color: #ff9e1b; }
 .devnote-title.green  { color: var(--accent-1); }
 .devnote-title.cyan   { color: var(--accent-3); }
 
 .devnote-desc {
   font-family: var(--font-ui);
-  font-size: 11px;
-  line-height: 1.5;
-  color: var(--text-1);
+  font-size: 15.5px;
+  line-height: 1.6;
+  color: #ffffff;
   margin: 0;
 }
 
